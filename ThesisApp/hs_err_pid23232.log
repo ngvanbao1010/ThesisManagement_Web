@@ -1,0 +1,2061 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbf1f74bc7, pid=23232, tid=18720
+#
+# JRE version: Java(TM) SE Runtime Environment (24.0.2+12) (build 24.0.2+12-54)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.0.2+12-54, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [zip.dll+0x4bc7]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dclassworlds.conf=C:\Program Files\NetBeans-25\netbeans\java\maven\bin\m2.conf -Dmaven.home=C:\Program Files\NetBeans-25\netbeans\java\maven -Dlibrary.jansi.path=C:\Program Files\NetBeans-25\netbeans\java\maven\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\Admin\Desktop\LTHD\phattrienweb\Phat-Trien-He-Thong-Web\ThesisApp org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-25\netbeans\java\maven-nblib\netbeans-eventspy.jar --no-transfer-progress install
+
+Host: Intel(R) Core(TM) i5-14600KF, 20 cores, 31G,  Windows 11 , 64 bit Build 26100 (10.0.26100.4484)
+Time: Sat Aug  9 15:19:23 2025 SE Asia Standard Time elapsed time: 2.070148 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000278f1f76f70):  JavaThread "pool-2-thread-6"        [_thread_in_native, id=18720, stack(0x000000810bc00000,0x000000810bd00000) (1024K)]
+
+Stack: [0x000000810bc00000,0x000000810bd00000],  sp=0x000000810bcfea88,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [zip.dll+0x4bc7]  (no source info available)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 6636  java.util.zip.Deflater.deflateBytesBytes(J[BII[BIIII)J java.base@24.0.2 (0 bytes) @ 0x00000278d61dd12b [0x00000278d61dd080+0x00000000000000ab]
+J 6749 c2 java.util.zip.Deflater.deflate([BIII)I java.base@24.0.2 (420 bytes) @ 0x00000278d61e604c [0x00000278d61e5ec0+0x000000000000018c]
+J 6751 c2 org.apache.commons.compress.archivers.zip.StreamCompressor.write([BIII)J (59 bytes) @ 0x00000278d61e94d8 [0x00000278d61e8c00+0x00000000000008d8]
+J 6739 c1 org.apache.commons.compress.archivers.zip.StreamCompressor.deflate(Ljava/io/InputStream;I)V (49 bytes) @ 0x00000278cefbfde4 [0x00000278cefbfac0+0x0000000000000324]
+j  org.apache.commons.compress.archivers.zip.ScatterZipOutputStream.addArchiveEntry(Lorg/apache/commons/compress/archivers/zip/ZipArchiveEntryRequest;)V+16
+j  org.apache.commons.compress.archivers.zip.ParallelScatterZipCreator.lambda$createCallable$1(Lorg/apache/commons/compress/archivers/zip/ZipArchiveEntryRequestSupplier;)Lorg/apache/commons/compress/archivers/zip/ScatterZipOutputStream;+18
+j  org.apache.commons.compress.archivers.zip.ParallelScatterZipCreator$$Lambda+0x00000278812270f8.call()Ljava/lang/Object;+8
+j  java.util.concurrent.FutureTask.run()V+39 java.base@24.0.2
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+92 java.base@24.0.2
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5 java.base@24.0.2
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@24.0.2
+j  java.lang.Thread.run()V+19 java.base@24.0.2
+v  ~StubRoutines::call_stub 0x00000278d5790fcd
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), writing address 0x0000000000005c50
+
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000000000000000, RCX=0x0000000000002e28, RDX=0x0000000000002e28
+RSP=0x000000810bcfea88, RBP=0x000000000000fffd, RSI=0x0000000000008000, RDI=0x0000000000002e28
+R8 =0x0000000000008000, R9 =0x00000278f1bfe8a0, R10=0x00000278f3205b72, R11=0x0000000000007fca
+R12=0x0000000000000002, R13=0x000000000000029a, R14=0x0000000000000000, R15=0x0000000000000001
+RIP=0x00007ffbf1f74bc7, EFLAGS=0x0000000000010287
+
+XMM[0]=0x9afec3eecec52e76 0x2f7efd8cee827b19
+XMM[1]=0x7a95b7c6ca2a6b56 0xfaa777ef329ad46c
+XMM[2]=0x52cb1d978195639a 0xf8e2dc70aed620a1
+XMM[3]=0x86358e54b1db1432 0xdb516886395a6d8a
+XMM[4]=0x62eab57517c534ca 0xb1d345534db8e75a
+XMM[5]=0x52b2f16d368b7a19 0x37a54c173d4c7d41
+XMM[6]=0x0000000000000000 0x0000000000000000
+XMM[7]=0x0000000000000000 0x0000000000000000
+XMM[8]=0x0000000000000000 0x0000000000000000
+XMM[9]=0x0000000000000000 0x0000000000000000
+XMM[10]=0x0000000000000000 0x0000000000000000
+XMM[11]=0x0000000000000000 0x0000000000000000
+XMM[12]=0x0000000000000000 0x0000000000000000
+XMM[13]=0x0000000000000000 0x0000000000000000
+XMM[14]=0x0000000000000000 0x0000000000000000
+XMM[15]=0x0000000000000000 0x0000000000000000
+  MXCSR=0x00001fa0
+
+
+Register to memory mapping:
+
+RAX=0x0 is null
+RBX=0x0 is null
+RCX=0x0000000000002e28 is an unknown value
+RDX=0x0000000000002e28 is an unknown value
+RSP=0x000000810bcfea88 is pointing into the stack for thread: 0x00000278f1f76f70
+RBP=0x000000000000fffd is an unknown value
+RSI=0x0000000000008000 is an unknown value
+RDI=0x0000000000002e28 is an unknown value
+R8 =0x0000000000008000 is an unknown value
+R9 =0x00000278f1bfe8a0 points into unknown readable memory: 0x00000278eb60a5e0 | e0 a5 60 eb 78 02 00 00
+R10=0x00000278f3205b72 points into unknown readable memory: 28 2e 00 00 91 68
+R11=0x0000000000007fca is an unknown value
+R12=0x0000000000000002 is an unknown value
+R13=0x000000000000029a is an unknown value
+R14=0x0 is null
+R15=0x0000000000000001 is an unknown value
+
+Top of Stack: (sp=0x000000810bcfea88)
+0x000000810bcfea88:   00007ffbf1f746ac 0000000000000001   .F..............
+0x000000810bcfea98:   0000000000000000 000000000000029a   ................
+0x000000810bcfeaa8:   0000000000000002 0000000000000000   ................
+0x000000810bcfeab8:   00007ffbf1f72915 00000278f1bfe8a0   .)..........x...
+0x000000810bcfeac8:   00007ffbf1f70000 000000000000fffd   ................
+0x000000810bcfead8:   00007ffbf1f70000 00000278f1bfe8d0   ............x...
+0x000000810bcfeae8:   0000000000000000 0000000000000001   ................
+0x000000810bcfeaf8:   00007ffbf1f7360c 00000278f1bfe8a0   .6..........x...
+0x000000810bcfeb08:   00000278f1bfe8b8 00000278eb60a5e0   ....x.....`.x...
+0x000000810bcfeb18:   0000000000000000 000000810bcfec18   ................
+0x000000810bcfeb28:   0000000604f51390 0000000000001000   ................
+0x000000810bcfeb38:   0000000000001000 00000278eb60a5e0   ..........`.x...
+0x000000810bcfeb48:   00007ffbf1f7156f 00000278f1f77338   o.......8s..x...
+0x000000810bcfeb58:   0000000000000000 0000000604f523a0   .........#......
+0x000000810bcfeb68:   00000278f1f76f70 0000000000000000   po..x...........
+0x000000810bcfeb78:   0000000000000000 00000278f1f76f70   ........po..x...
+0x000000810bcfeb88:   0000000000001000 00000006034038e0   .........8@.....
+0x000000810bcfeb98:   0000000000000000 0000000000000000   ................
+0x000000810bcfeba8:   00000278d61dd164 0000000000000000   d...x...........
+0x000000810bcfebb8:   0000000000000000 000000810bcfec40   ........@.......
+0x000000810bcfebc8:   0000000000001000 0000000000000000   ................
+0x000000810bcfebd8:   0000000000001000 000000810bcfec30   ........0.......
+0x000000810bcfebe8:   0000000000000000 0000000000001000   ................
+0x000000810bcfebf8:   0000000000000000 0000000000000000   ................
+0x000000810bcfec08:   00000006034038f8 00000006059d40a8   .8@......@......
+0x000000810bcfec18:   0000000604f52390 0000000000000003   .#..............
+0x000000810bcfec28:   00000278d57aa4e9 0000000604f51380   ..z.x...........
+0x000000810bcfec38:   00000278d5ff2f5c 0000000000000000   \/..x...........
+0x000000810bcfec48:   00000278d61e604c 0000027800000000   L`..x.......x...
+0x000000810bcfec58:   0000000000001000 0000000000000000   ................
+0x000000810bcfec68:   0000000000000000 00000006034038f8   .........8@.....
+0x000000810bcfec78:   0000000604f51380 00000006034038e0   .........8@.....
+
+Instructions: (pc=0x00007ffbf1f74bc7)
+  0x00007ffbf1f74ac7:   ff 88 44 24 38 41 8b 4a 4c 49 8b 42 60 49 23 ce
+  0x00007ffbf1f74ad7:   0f b7 1c 48 41 3b d9 76 09 83 c6 ff 0f 85 04 ff
+  0x00007ffbf1f74ae7:   ff ff 48 8b 5c 24 30 44 3b da 48 8b 6c 24 40 48
+  0x00007ffbf1f74af7:   8b 74 24 48 41 0f 46 d3 8b c2 41 5f 41 5e 41 5d
+  0x00007ffbf1f74b07:   41 5c 5f c3 cc 48 89 5c 24 08 48 89 6c 24 10 48
+  0x00007ffbf1f74b17:   89 74 24 18 57 48 83 ec 20 8b 41 08 48 8b f2 41
+  0x00007ffbf1f74b27:   3b c0 8b f8 48 8b d9 41 0f 47 f8 85 ff 75 04 33
+  0x00007ffbf1f74b37:   c0 eb 4f 48 8b 11 2b c7 89 41 08 48 8b ce 44 8b
+  0x00007ffbf1f74b47:   c7 8b ef e8 11 76 00 00 48 8b 43 28 8b 48 2c 83
+  0x00007ffbf1f74b57:   f9 01 75 10 8b 4b 4c 44 8b c7 48 8b d6 e8 87 3d
+  0x00007ffbf1f74b67:   00 00 eb 13 83 f9 02 75 11 8b 4b 4c 44 8b c7 48
+  0x00007ffbf1f74b77:   8b d6 e8 62 40 00 00 89 43 4c 48 01 2b 8b c7 01
+  0x00007ffbf1f74b87:   7b 0c 48 8b 5c 24 30 48 8b 6c 24 38 48 8b 74 24
+  0x00007ffbf1f74b97:   40 48 83 c4 20 5f c3 cc cc 44 8b 59 74 4c 8b c9
+  0x00007ffbf1f74ba7:   48 8b 41 68 44 8b 41 44 4e 8d 14 58 33 c0 4d 8d
+  0x00007ffbf1f74bb7:   52 fe 41 0f b7 12 0f b7 ca 66 41 2b c8 41 3b d0
+=>0x00007ffbf1f74bc7:   66 0f 43 c1 66 41 89 02 41 83 c3 ff 75 de 49 8b
+  0x00007ffbf1f74bd7:   41 60 45 8b d0 4e 8d 0c 40 33 c0 4d 8d 49 fe 41
+  0x00007ffbf1f74be7:   0f b7 11 0f b7 ca 66 41 2b c8 41 3b d0 66 0f 43
+  0x00007ffbf1f74bf7:   c1 66 41 89 01 41 83 c2 ff 75 de c3 cc 48 8d 05
+  0x00007ffbf1f74c07:   5d ea 00 00 c3 40 53 55 56 57 41 54 41 55 41 56
+  0x00007ffbf1f74c17:   41 57 48 83 ec 28 48 8b 69 28 4c 8b f1 44 8b 79
+  0x00007ffbf1f74c27:   08 41 b9 01 00 00 00 4c 8b 41 10 41 83 ef 05 48
+  0x00007ffbf1f74c37:   8b 39 8b 49 18 4c 03 ff 4c 8b 5d 60 2b d1 48 8b
+  0x00007ffbf1f74c47:   75 68 44 8b 6d 3c 8b 5d 48 44 8d a1 ff fe ff ff
+  0x00007ffbf1f74c57:   8b 4d 70 4d 03 e0 44 8b 55 4c 8b c2 49 8b d0 48
+  0x00007ffbf1f74c67:   2b d0 41 d3 e1 8b 45 34 41 ff c9 8b 4d 74 89 44
+  0x00007ffbf1f74c77:   24 78 8b 45 38 89 84 24 80 00 00 00 48 8b 45 40
+  0x00007ffbf1f74c87:   48 89 44 24 10 b8 01 00 00 00 d3 e0 ff c8 48 89
+  0x00007ffbf1f74c97:   54 24 18 89 44 24 70 4c 89 1c 24 48 89 74 24 08
+  0x00007ffbf1f74ca7:   44 89 8c 24 88 00 00 00 41 83 fa 0f 73 1e 0f b6
+  0x00007ffbf1f74cb7:   07 41 8b ca d3 e0 41 8d 4a 08 03 d8 0f b6 47 01
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x00007ffbf1f746ac zip.dll
+stack at sp + 1 slots: 0x0000000000000001 is an unknown value
+stack at sp + 2 slots: 0x0 is null
+stack at sp + 3 slots: 0x000000000000029a is an unknown value
+stack at sp + 4 slots: 0x0000000000000002 is an unknown value
+stack at sp + 5 slots: 0x0 is null
+stack at sp + 6 slots: 0x00007ffbf1f72915 zip.dll
+stack at sp + 7 slots: 0x00000278f1bfe8a0 points into unknown readable memory: 0x00000278eb60a5e0 | e0 a5 60 eb 78 02 00 00
+
+Lock stack of current Java thread (top to bottom):
+LockStack[0]: java.util.zip.Deflater$DeflaterZStreamRef 
+{0x00000006034038e0} - klass: 'java/util/zip/Deflater$DeflaterZStreamRef' - flags: 
+
+ - ---- fields (total size 3 words):
+ - private final 'cleanable' 'Ljava/lang/ref/Cleaner$Cleanable;' @12  a 'jdk/internal/ref/CleanerImpl$PhantomCleanableRef'{0x0000000603922a70} (0xc072454e)
+ - private 'address' 'J' @16  2718368310752 (0x00000278eb60a5e0)
+
+
+Compiled method (n/a) 2103 6636     n 0       java.util.zip.Deflater::deflateBytesBytes (native)
+ total in heap  [0x00000278d61dcf88,0x00000278d61dd240] = 696
+ relocation     [0x00000278d61dd060,0x00000278d61dd070] = 16
+ main code      [0x00000278d61dd080,0x00000278d61dd23a] = 442
+ stub code      [0x00000278d61dd23a,0x00000278d61dd240] = 6
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x00000278ed3b3a38} 'deflateBytesBytes' '(J[BII[BIIII)J' in 'java/util/zip/Deflater'
+  # this:     rdx:rdx   = 'java/util/zip/Deflater'
+  # parm0:    r8:r8     = long
+  # parm1:    r9:r9     = '[B'
+  # parm2:    rdi       = int
+  # parm3:    rsi       = int
+  # parm4:    rcx:rcx   = '[B'
+  # parm5:    [sp+0xa0]   = int  (sp of caller)
+  # parm6:    [sp+0xa8]   = int
+  # parm7:    [sp+0xb0]   = int
+  # parm8:    [sp+0xb8]   = int
+  0x00000278d61dd080: 6690 448b | 5208 443b 
+
+  0x00000278d61dd088: ;   {runtime_call Shared Runtime ic_miss_blob}
+  0x00000278d61dd088: 5008 0f85 | d016 60ff 
+[Verified Entry Point]
+  0x00000278d61dd090: 8984 2400 | 80ff ff55 | 488b ec48 | 81ec 9000 | 0000 6690 | 4181 7f20 | 0500 0000 
+
+  0x00000278d61dd0ac: ;   {runtime_call StubRoutines (final stubs)}
+  0x00000278d61dd0ac: 7405 e84d | 885e ff48 | 6345 2848 | 8944 2450 | 4863 4520 | 4889 4424 | 4848 6345 | 1848 8944 
+  0x00000278d61dd0cc: 2440 4863 | 4510 4889 | 4424 3848 | 898c 2480 | 0000 0048 | 83f9 0048 | 8d84 2480 | 0000 0048 
+  0x00000278d61dd0ec: 0f44 8424 | 8000 0000 | 4889 4424 | 3048 8974 | 2428 4889 | 7c24 204c | 894c 2468 | 4983 f900 
+  0x00000278d61dd10c: 4c8d 4c24 | 684c 0f44 | 4c24 6848 | 8954 2458 | 4883 fa00 | 488d 5424 | 5848 0f44 | 5424 58c5 
+  0x00000278d61dd12c: ;   {internal_word}
+  0x00000278d61dd12c: f877 49ba | 2bd1 1dd6 | 7802 0000 | 4d89 97b0 | 0300 0049 | 89a7 a803 | 0000 498d | 8fc8 0300 
+  0x00000278d61dd14c: 0041 c787 | 5404 0000 | 0400 0000 
+
+  0x00000278d61dd158: ;   {runtime_call}
+  0x00000278d61dd158: 48b8 6414 | f7f1 fb7f | 0000 ffd0 | c5f8 7741 | c787 5404 | 0000 0500 | 0000 f083 | 4424 c000 
+  0x00000278d61dd178: 493b 6f28 | 0f87 0e00 | 0000 4183 | bf50 0400 | 0000 0f84 | 2b00 0000 | c5f8 7748 | 8945 f849 
+  0x00000278d61dd198: 8bcf 4c8b | e448 83ec | 2048 83e4 
+
+  0x00000278d61dd1a4: ;   {runtime_call}
+  0x00000278d61dd1a4: f048 b810 | b951 96fb | 7f00 00ff | d049 8be4 | 4d33 e448 | 8b45 f841 | c787 5404 | 0000 0800 
+  0x00000278d61dd1c4: 0000 4183 | bfd0 0400 | 0002 0f84 | 3c00 0000 | 49c7 87a8 | 0300 0000 | 0000 0049 | c787 b003 
+  0x00000278d61dd1e4: 0000 0000 | 0000 c5f8 | 7749 8b8f | 3804 0000 | c781 0001 | 0000 0000 | 0000 c949 | 837f 0800 
+  0x00000278d61dd204: 0f85 0100 
+
+  0x00000278d61dd208: ;   {runtime_call StubRoutines (initial stubs)}
+  0x00000278d61dd208: 0000 c3e9 | b03c 5bff | c5f8 7748 | 8945 f84c | 8be4 4883 | ec20 4883 
+
+  0x00000278d61dd220: ;   {runtime_call}
+  0x00000278d61dd220: e4f0 48b8 | 8059 8996 | fb7f 0000 | ffd0 498b | e44d 33e4 | 488b 45f8 | eb9a f4f4 | f4f4 f4f4 
+[/MachCode]
+
+
+Compiled method (c2) 2105 6749   !   4       java.util.zip.Deflater::deflate (420 bytes)
+ total in heap  [0x00000278d61e5d88,0x00000278d61e6418] = 1680
+ relocation     [0x00000278d61e5e60,0x00000278d61e5eb0] = 80
+ main code      [0x00000278d61e5ec0,0x00000278d61e63c0] = 1280
+ stub code      [0x00000278d61e63c0,0x00000278d61e63e8] = 40
+ oops           [0x00000278d61e63e8,0x00000278d61e63f0] = 8
+ metadata       [0x00000278d61e63f0,0x00000278d61e6418] = 40
+ immutable data [0x00000278f1e47fb0,0x00000278f1e48348] = 920
+ dependencies   [0x00000278f1e47fb0,0x00000278f1e47fc0] = 16
+ nul chk table  [0x00000278f1e47fc0,0x00000278f1e47fd8] = 24
+ handler table  [0x00000278f1e47fd8,0x00000278f1e47ff0] = 24
+ scopes pcs     [0x00000278f1e47ff0,0x00000278f1e480d0] = 224
+ scopes data    [0x00000278f1e480d0,0x00000278f1e48348] = 632
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Instructions begin]
+  0x00000278d61e5ec0: 6690 448b | 5208 443b 
+
+  0x00000278d61e5ec8: ;   {runtime_call Shared Runtime ic_miss_blob}
+  0x00000278d61e5ec8: 5008 0f85 | 9088 5fff 
+[Verified Entry Point]
+  0x00000278d61e5ed0: 8984 2400 | 80ff ff55 | 4883 ec70 | 4181 7f20 | 0500 0000 | 0f85 c504 | 0000 897c | 2434 4489 
+  0x00000278d61e5ef0: 4c24 3048 | 8954 2420 | 4c89 4424 | 2845 8b58 | 0c41 8beb | 410b e90b | ef0f 8cc0 | 0200 0041 
+  0x00000278d61e5f10: 8beb 412b | e93b fd0f | 8f27 0300 | 0085 f60f | 853b 0300 | 0044 8b5a | 3044 895c | 2450 4585 
+  0x00000278d61e5f30: db0f 8424 | 0200 004f | 8d2c dc48 | 8d5c 2460 | 4d8b 5500 | 418b 9f58 | 0600 0041 | f6c2 020f 
+  0x00000278d61e5f50: 8538 0000 | 0081 fba7 | 0600 000f | 8f4c 0000 | 004d 3b6c | 1ff8 7417 | 498b c248 | 83c8 0149 
+  0x00000278d61e5f70: 83e2 fef0 | 4d0f b155 | 000f 852e | 0000 004d | 892c 1f41 | 8387 5806 | 0000 08eb | 1e48 33c0 
+  0x00000278d61e5f90: 498b 9f48 | 0400 00f0 | 490f b15a | 3e74 0c48 | 3bd8 7509 | 49ff 8286 | 0000 0033 | c00f 85c9 
+  0x00000278d61e5fb0: 0100 004c | 8b54 2420 | 458b 5a30 
+
+  0x00000278d61e5fbc: ; implicit exception: dispatches to 0x00000278d61e633c
+  0x00000278d61e5fbc: 4f8b 44dc | 104d 85c0 | 0f84 c602 
+
+  0x00000278d61e5fc8: ;   {no_reloc}
+  0x00000278d61e5fc8: 0000 450f | b65a 2d45 | 85db 0f85 | 6a01 0000 | 33db 458b | 5a34 410f | b66a 2c85 | ed0f 85e1 
+  0x00000278d61e5fe8: 0200 0045 | 85db 0f85 | f801 0000 | 418b 7220 | 418b 6a0c | 458b 5a38 | 2bf5 4d8b | cb49 c1e1 
+  0x00000278d61e6008: 0349 8bd2 | 8bfd 488b | 4c24 2844 | 8b54 2430 | 4489 1424 | 4889 4424 | f88b 4424 | 3489 4424 
+  0x00000278d61e6028: 0848 8b44 | 24f8 895c | 2410 4533 | db44 895c | 2418 4c89 | 6c24 304c | 896c 2438 
+
+  0x00000278d61e6044: ;   {optimized virtual_call}
+  0x00000278d61e6044: 6666 90e8 
+
+  0x00000278d61e6048: ; ImmutableOopMap {[32]=Oop [48]=Oop [56]=Oop [80]=NarrowOop }
+                      ;*invokevirtual deflateBytesBytes {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@133 (line 562)
+  0x00000278d61e6048: 4470 ffff 
+
+  0x00000278d61e604c: ;   {post_call_nop}
+  0x00000278d61e604c: 0f1f 8400 | c402 0000 | 4c8b d049 | c1ea 3e41 | f6c2 010f | 85e7 0000 | 0048 8bd8 | 48c1 eb1f 
+  0x00000278d61e606c: 4825 ffff | ff7f 4c8b | 5424 2049 | 0142 1048 | 81e3 ffff | ff7f 4901 | 5a18 448b | d844 03dd 
+  0x00000278d61e608c: 4589 5a0c | 488d 4424 | 604c 8b5c | 2430 418b | 8758 0600 | 004d 8b13 | 4d3b 5c07 | f80f 852e 
+  0x00000278d61e60ac: 0000 0041 | 83af 5806 | 0000 084d | 3b5c 07f0 | 0f84 6500 | 0000 498b | c248 83e0 | fc49 83ca 
+  0x00000278d61e60cc: 01f0 4d0f | b113 0f85 | ca02 0000 | e94a 0000 | 0049 83ba | 8600 0000 | 0075 3949 | c742 3e00 
+  0x00000278d61e60ec: 0000 00f0 | 8344 24c0 | 0049 8b82 | 8e00 0000 | 490b 8296 | 0000 0074 | 2249 83ba | 9e00 0000 
+  0x00000278d61e610c: 0075 1849 | 83e2 fd4d | 8997 6805 | 0000 4183 | ca01 eb0a | 49ff 8a86 | 0000 0045 | 33d2 0f85 
+  0x00000278d61e612c: 7a00 0000 | 8bc3 4883 
+
+  0x00000278d61e6134: ;   {poll_return}
+  0x00000278d61e6134: c470 5d49 | 3b67 280f | 874b 0200 | 00c3 bb04 | 0000 00e9 | 8efe ffff | 4c8b 5424 | 2041 c642 
+  0x00000278d61e6154: 2e01 e90a | ffff ffba | f6ff ffff | 488b 6c24 | 2048 ff74 | 2428 488f 
+
+  0x00000278d61e616c: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e616c: 4424 20e8 
+
+  0x00000278d61e6170: ; ImmutableOopMap {rbp=Oop [32]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@43 (line 541)
+  0x00000278d61e6170: ec15 6cff 
+
+  0x00000278d61e6174: ;   {post_call_nop}
+  0x00000278d61e6174: 0f1f 8400 | ec03 0001 | 498b d54c | 8d44 2460 | 488b 6c24 | 204c 896c | 2448 4c89 
+
+  0x00000278d61e6190: ;   {runtime_call C2 Runtime complete_monitor_locking}
+  0x00000278d61e6190: 6c24 58e8 
+
+  0x00000278d61e6194: ; ImmutableOopMap {rbp=Oop [32]=Oop [40]=Oop [72]=Oop [80]=NarrowOop [88]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@43 (line 541)
+  0x00000278d61e6194: c8c8 6cff 
+
+  0x00000278d61e6198: ;   {post_call_nop}
+  0x00000278d61e6198: 0f1f 8400 | 1004 0002 | 4c8b 6c24 | 48e9 09fe | ffff 498b | cb48 8d54 | 2460 4d8b | c749 bae0 
+  0x00000278d61e61b8: 0f89 96fb | 7f00 0041 
+
+  0x00000278d61e61c0: ;   {post_call_nop}
+  0x00000278d61e61c0: ffd2 0f1f | 8400 0000 | 0000 e961 | ffff ffba | 4dff ffff | 8974 2438 | 4489 5c24 
+
+  0x00000278d61e61dc: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e61dc: 4466 90e8 
+
+  0x00000278d61e61e0: ; ImmutableOopMap {[32]=Oop [40]=Oop }
+                      ;*iflt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) jdk.internal.util.Preconditions::checkFromIndexSize@5 (line 396)
+                      ; - java.util.zip.Deflater::deflate@7 (line 537)
+  0x00000278d61e61e0: 7c15 6cff 
+
+  0x00000278d61e61e4: ;   {post_call_nop}
+  0x00000278d61e61e4: 0f1f 8400 | 5c04 0003 | ba4d ffff | ff49 8bea | 48ff 7424 | 2848 8f44 | 2420 448b | 4424 3044 
+  0x00000278d61e6204: 8944 2428 | 4889 4424 | f88b 4424 | 3489 4424 | 2c48 8b44 | 24f8 895c | 2430 4889 | 4424 f88b 
+  0x00000278d61e6224: 4424 5089 | 4424 3448 | 8b44 24f8 | 4489 5c24 
+
+  0x00000278d61e6234: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e6234: 3c66 90e8 
+
+  0x00000278d61e6238: ; ImmutableOopMap {rbp=Oop [32]=Oop [52]=NarrowOop [60]=NarrowOop }
+                      ;*ifnonnull {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.Deflater::deflate@96 (line 560)
+  0x00000278d61e6238: 2415 6cff 
+
+  0x00000278d61e623c: ;   {post_call_nop}
+  0x00000278d61e623c: 0f1f 8400 | b404 0004 | ba4d ffff | ff89 7424 | 3844 895c 
+
+  0x00000278d61e6250: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e6250: 2444 90e8 
+
+  0x00000278d61e6254: ; ImmutableOopMap {[32]=Oop [40]=Oop }
+                      ;*if_icmple {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) jdk.internal.util.Preconditions::checkFromIndexSize@12 (line 396)
+                      ; - java.util.zip.Deflater::deflate@7 (line 537)
+  0x00000278d61e6254: 0815 6cff 
+
+  0x00000278d61e6258: ;   {post_call_nop}
+  0x00000278d61e6258: 0f1f 8400 | d004 0005 | ba4d ffff | ff48 8b6c | 2420 48ff | 7424 2848 | 8f44 2420 | 4489 4c24 
+  0x00000278d61e6278: 2889 7c24 | 2c89 7424 
+
+  0x00000278d61e6280: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e6280: 3466 90e8 
+
+  0x00000278d61e6284: ; ImmutableOopMap {rbp=Oop [32]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.Deflater::deflate@13 (line 538)
+  0x00000278d61e6284: d814 6cff 
+
+  0x00000278d61e6288: ;   {post_call_nop}
+  0x00000278d61e6288: 0f1f 8400 | 0005 0006 | ba4d ffff | ff45 33d2 | 4d3b c2bd | ffff ffff | 7c08 400f | 95c5 400f 
+  0x00000278d61e62a8: b6ed 4889 | 4424 f88b | 4424 5089 | 4424 3848 | 8b44 24f8 
+
+  0x00000278d61e62bc: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e62bc: 6666 90e8 
+
+  0x00000278d61e62c0: ; ImmutableOopMap {[32]=Oop [40]=Oop [56]=NarrowOop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.Deflater::ensureOpen@33 (line 886)
+                      ; - java.util.zip.Deflater::deflate@45 (line 542)
+  0x00000278d61e62c0: 9c14 6cff 
+
+  0x00000278d61e62c4: ;   {post_call_nop}
+  0x00000278d61e62c4: 0f1f 8400 | 3c05 0007 | ba4d ffff | ff89 5c24 | 3848 8944 | 24f8 8b44 | 2450 8944 | 243c 488b 
+  0x00000278d61e62e4: 4424 f844 | 895c 2440 
+
+  0x00000278d61e62ec: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e62ec: 6666 90e8 
+
+  0x00000278d61e62f0: ; ImmutableOopMap {[32]=Oop [40]=Oop [60]=NarrowOop [64]=NarrowOop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.Deflater::deflate@68 (line 550)
+  0x00000278d61e62f0: 6c14 6cff 
+
+  0x00000278d61e62f4: ;   {post_call_nop}
+  0x00000278d61e62f4: 0f1f 8400 | 6c05 0008 | ba9d ffff | ff8b 6c24 | 5048 8944 
+
+  0x00000278d61e6308: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e6308: 2420 90e8 
+
+  0x00000278d61e630c: ; ImmutableOopMap {rbp=NarrowOop [32]=Oop }
+                      ;*astore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@412 (line 605)
+  0x00000278d61e630c: 5014 6cff 
+
+  0x00000278d61e6310: ;   {post_call_nop}
+  0x00000278d61e6310: 0f1f 8400 | 8805 0009 | baf6 ffff | ff48 8b6c | 2420 8974 | 2428 4489 | 4c24 2c89 
+
+  0x00000278d61e632c: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e632c: 7c24 30e8 
+
+  0x00000278d61e6330: ; ImmutableOopMap {rbp=Oop }
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@3 (line 537)
+  0x00000278d61e6330: 2c14 6cff 
+
+  0x00000278d61e6334: ;   {post_call_nop}
+  0x00000278d61e6334: 0f1f 8400 | ac05 000a | baf6 ffff | ff49 8bea | 48ff 7424 | 2848 8f44 | 2420 448b | 5c24 3044 
+  0x00000278d61e6354: 895c 2428 | 4889 4424 | f88b 4424 | 3489 4424 | 2c48 8b44 | 24f8 4889 | 4424 f88b | 4424 5089 
+  0x00000278d61e6374: 4424 3048 | 8b44 24f8 
+
+  0x00000278d61e637c: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e637c: 6666 90e8 
+
+  0x00000278d61e6380: ; ImmutableOopMap {rbp=Oop [32]=Oop [48]=NarrowOop }
+                      ;*invokevirtual address {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::ensureOpen@28 (line 886)
+                      ; - java.util.zip.Deflater::deflate@45 (line 542)
+  0x00000278d61e6380: dc13 6cff 
+
+  0x00000278d61e6384: ;   {post_call_nop}
+  0x00000278d61e6384: 0f1f 8400 | fc05 000b 
+
+  0x00000278d61e638c: ;   {internal_word}
+  0x00000278d61e638c: 49ba 3761 | 1ed6 7802 | 0000 4d89 | 9760 0400 
+
+  0x00000278d61e639c: ;   {runtime_call SafepointBlob}
+  0x00000278d61e639c: 00e9 3ef9 | 5fff 4183 | 8758 0600 | 0008 e97b 
+
+  0x00000278d61e63ac: ;   {runtime_call StubRoutines (final stubs)}
+  0x00000278d61e63ac: fdff ffe8 | 4cf5 5dff | e931 fbff | fff4 f4f4 | f4f4 f4f4 
+[Stub Code]
+  0x00000278d61e63c0: ;   {no_reloc}
+  0x00000278d61e63c0: 48bb 0000 | 0000 0000 
+
+  0x00000278d61e63c8: ;   {runtime_call nmethod}
+  0x00000278d61e63c8: 0000 e9fb 
+
+  0x00000278d61e63cc: ;   {runtime_call ExceptionBlob}
+  0x00000278d61e63cc: ffff ffe9 | 8c16 6cff 
+[Deopt Handler Code]
+  0x00000278d61e63d4: e800 0000 | 0048 832c 
+
+  0x00000278d61e63dc: ;   {runtime_call DeoptimizationBlob}
+  0x00000278d61e63dc: 2405 e99d | ee5f fff4 | f4f4 f4f4 
+[/MachCode]
+
+
+Compiled method (c2) 2113 6751       4       org.apache.commons.compress.archivers.zip.StreamCompressor::write (59 bytes)
+ total in heap  [0x00000278d61e8a08,0x00000278d61ea248] = 6208
+ relocation     [0x00000278d61e8ae0,0x00000278d61e8bf0] = 272
+ main code      [0x00000278d61e8c00,0x00000278d61ea110] = 5392
+ stub code      [0x00000278d61ea110,0x00000278d61ea148] = 56
+ oops           [0x00000278d61ea148,0x00000278d61ea158] = 16
+ metadata       [0x00000278d61ea158,0x00000278d61ea248] = 240
+ immutable data [0x00000278f10bec80,0x00000278f10bf890] = 3088
+ dependencies   [0x00000278f10bec80,0x00000278f10becd8] = 88
+ nul chk table  [0x00000278f10becd8,0x00000278f10bed40] = 104
+ handler table  [0x00000278f10bed40,0x00000278f10bed70] = 48
+ scopes pcs     [0x00000278f10bed70,0x00000278f10bf080] = 784
+ scopes data    [0x00000278f10bf080,0x00000278f10bf890] = 2064
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Instructions begin]
+  0x00000278d61e8c00: 6690 448b | 5208 443b 
+
+  0x00000278d61e8c08: ;   {runtime_call Shared Runtime ic_miss_blob}
+  0x00000278d61e8c08: 5008 0f85 | 505b 5fff 
+[Verified Entry Point]
+  0x00000278d61e8c10: 8984 2400 | 80ff ff55 | 4881 eca0 | 0000 0090 | 4181 7f20 | 0500 0000 | 0f85 d214 | 0000 8974 
+  0x00000278d61e8c30: 2428 897c | 2430 4d8b | e848 8954 | 2420 8b5a | 2841 8b4c | dc0c 4c8b | 5210 4c89 | 5424 3841 
+  0x00000278d61e8c50: 8b78 0c8b | ef41 0be9 | 0b6c 2430 | 85ed 0f8c | 8c0e 0000 | 8bef 412b | e944 8b5c | 2430 443b 
+  0x00000278d61e8c70: dd0f 8f45 | 0f00 0045 | 85db 0f8e | 680f 0000 | 443b cf0f | 839f 0a00 | 0041 8bf1 | 458d 3433 
+  0x00000278d61e8c90: 418d 6eff | 3bef 0f83 | c80a 0000 | 498d 5430 | 1045 8bc3 | c5f8 7749 | baa0 1279 | d578 0200 
+  0x00000278d61e8cb0: 0041 ffd2 
+
+  0x00000278d61e8cb4: ;   {post_call_nop}
+  0x00000278d61e8cb4: 0f1f 8400 | 0000 0000 | 4189 44dc | 0c44 8b54 | 2428 4183 | fa08 0f85 | 4c0e 0000 | 4c8b 5424 
+  0x00000278d61e8cd4: 2045 8b42 | 0c47 8b54 | c430 4585 | d20f 84a9 | 0a00 004f | 8d1c d448 | 8d9c 2490 | 0000 004d 
+  0x00000278d61e8cf4: 8b13 418b | 9f58 0600 | 0041 f6c2 | 020f 8537 | 0000 0081 | fba7 0600 | 000f 8f4b | 0000 004d 
+  0x00000278d61e8d14: 3b5c 1ff8 | 7416 498b | c248 83c8 | 0149 83e2 | fef0 4d0f | b113 0f85 | 2e00 0000 | 4d89 1c1f 
+  0x00000278d61e8d34: 4183 8758 | 0600 0008 | eb1e 4833 | c049 8b9f | 4804 0000 | f049 0fb1 | 5a3e 740c | 483b d875 
+  0x00000278d61e8d54: 0949 ff82 | 8600 0000 | 33c0 0f85 | d30a 0000 | 430f b66c | c42e 488d | 8424 9000 | 0000 418b 
+  0x00000278d61e8d74: 8758 0600 | 004d 8b13 | 4d3b 5c07 | f80f 852e | 0000 0041 | 83af 5806 | 0000 084d | 3b5c 07f0 
+  0x00000278d61e8d94: 0f84 6500 | 0000 498b | c248 83e0 | fc49 83ca | 01f0 4d0f | b113 0f85 | 4313 0000 
+
+  0x00000278d61e8db0: ;   {no_reloc}
+  0x00000278d61e8db0: e94a 0000 | 0049 83ba | 8600 0000 | 0075 3949 | c742 3e00 | 0000 00f0 | 8344 24c0 | 0049 8b82 
+  0x00000278d61e8dd0: 8e00 0000 | 490b 8296 | 0000 0074 | 2249 83ba | 9e00 0000 | 0075 1849 | 83e2 fd4d | 8997 6805 
+  0x00000278d61e8df0: 0000 4183 | ca01 eb0a | 49ff 8a86 | 0000 0045 | 33d2 0f85 | 040a 0000 | 85ed 0f85 | 480d 0000 
+  0x00000278d61e8e10: 448b 5c24 | 3041 81fb | 0020 0000 | 0f8f f20d | 0000 4c8b | 5424 2045 | 8b42 0c47 | 8b5c c430 
+  0x00000278d61e8e30: 8bef 0bee | 0b6c 2430 | 85ed 0f8c | 380d 0000 | 8bef 2bee | 448b 5424 | 3044 3bd5 | 0f8f e60d 
+  0x00000278d61e8e50: 0000 4585 | db0f 845d | 0900 004b | 8d3c dc48 | 8d9c 2490 | 0000 004c | 8b17 418b | 9f58 0600 
+  0x00000278d61e8e70: 0041 f6c2 | 020f 8537 | 0000 0081 | fba7 0600 | 000f 8f4b | 0000 0049 | 3b7c 1ff8 | 7416 498b 
+  0x00000278d61e8e90: c248 83c8 | 0149 83e2 | fef0 4c0f | b117 0f85 | 2e00 0000 | 4989 3c1f | 4183 8758 | 0600 0008 
+  0x00000278d61e8eb0: ;   {no_reloc}
+  0x00000278d61e8eb0: eb1e 4833 | c049 8b9f | 4804 0000 | f049 0fb1 | 5a3e 740c | 483b d875 | 0949 ff82 | 8600 0000 
+  0x00000278d61e8ed0: 33c0 0f85 | bd09 0000 | 4389 74c4 | 0c47 8974 | c420 4d33 | d24b 8d5c | c434 4180 | 7f48 000f 
+  0x00000278d61e8ef0: 854b 1000 | 0044 8913 | 4f8d 54c4 | 3841 807f | 4800 0f85 | c710 0000 | 498b cd48 | c1e9 0341 
+  0x00000278d61e8f10: 890a 4d8b | ca4d 33cd | 49c1 e916 | 0f84 1e00 | 0000 4d8b | ca49 c1e9 | 0948 b900 | 60de db78 
+  0x00000278d61e8f30: 0200 004c | 03c9 4180 | 3902 0f85 | fe10 0000 | 488d 8424 | 9000 0000 | 418b 8758 | 0600 004c 
+  0x00000278d61e8f50: 8b1f 493b | 7c07 f80f | 852e 0000 | 0041 83af | 5806 0000 | 0849 3b7c | 07f0 0f84 | 6500 0000 
+  0x00000278d61e8f70: 498b c348 | 83e0 fc49 | 83cb 01f0 | 4c0f b11f | 0f85 6011 | 0000 e94a | 0000 0049 | 83bb 8600 
+  0x00000278d61e8f90: 0000 0075 | 3949 c743 | 3e00 0000 | 00f0 8344 | 24c0 0049 | 8b83 8e00 | 0000 490b | 8396 0000 
+  0x00000278d61e8fb0: ;   {no_reloc}
+  0x00000278d61e8fb0: 0074 2249 | 83bb 9e00 | 0000 0075 | 1849 83e3 | fd4d 899f | 6805 0000 | 4183 cb01 | eb0a 49ff 
+  0x00000278d61e8fd0: 8b86 0000 | 0045 33db | 0f85 0b09 | 0000 4c8b | 5424 2045 | 8b52 0c47 | 8b5c d430 | 4585 db0f 
+  0x00000278d61e8ff0: 84eb 0700 | 004f 8d0c | dc48 8d9c | 2490 0000 | 004d 8b01 | 418b 9f58 | 0600 0041 | f6c0 020f 
+  0x00000278d61e9010: 8537 0000 | 0081 fba7 | 0600 000f | 8f4b 0000 | 004d 3b4c | 1ff8 7416 | 498b c048 | 83c8 0149 
+  0x00000278d61e9030: 83e0 fef0 | 4d0f b101 | 0f85 2e00 | 0000 4d89 | 0c1f 4183 | 8758 0600 | 0008 eb1e | 4833 c049 
+  0x00000278d61e9050: 8b9f 4804 | 0000 f049 | 0fb1 583e | 740c 483b | d875 0949 | ff80 8600 | 0000 33c0 | 0f85 a208 
+  0x00000278d61e9070: 0000 438b | 6cd4 3485 | ed0f 8521 | 0b00 0043 | 8b7c d40c | 438b 5cd4 | 2048 8d84 | 2490 0000 
+  0x00000278d61e9090: 0041 8b87 | 5806 0000 | 4d8b 114d | 3b4c 07f8 | 0f85 2e00 | 0000 4183 | af58 0600 | 0008 4d3b 
+  0x00000278d61e90b0: ;   {no_reloc}
+  0x00000278d61e90b0: 4c07 f00f | 8465 0000 | 0049 8bc2 | 4883 e0fc | 4983 ca01 | f04d 0fb1 | 110f 850a | 1000 00e9 
+  0x00000278d61e90d0: 4a00 0000 | 4983 ba86 | 0000 0000 | 7539 49c7 | 423e 0000 | 0000 f083 | 4424 c000 | 498b 828e 
+  0x00000278d61e90f0: 0000 0049 | 0b82 9600 | 0000 7422 | 4983 ba9e | 0000 0000 | 7518 4983 | e2fd 4d89 | 9768 0500 
+  0x00000278d61e9110: 0041 83ca | 01eb 0a49 | ff8a 8600 | 0000 4533 | d20f 8539 | 0800 003b | df0f 8447 | 0300 004c 
+  0x00000278d61e9130: 8b54 2420 | 458b 5a08 
+
+  0x00000278d61e9138: ;   {metadata('org/apache/commons/compress/archivers/zip/StreamCompressor$ScatterGatherBackingStoreCompressor')}
+  0x00000278d61e9138: 4181 fb78 | bc21 010f | 8589 0900 | 004c 8954 | 2440 e959 | 0300 0090 | 448b 5424 | 2844 8b74 
+  0x00000278d61e9158: 242c 448b | 4424 3448 | 8b74 2448 | 4c8b 4c24 | 508b cd48 | 8b6c 2458 | 488b 7c24 | 608b 5c24 
+  0x00000278d61e9178: 6889 4424 | 6c41 8b51 | 2041 8b44 | d40c 448b | ea89 5c24 | 6848 897c | 2460 4889 | 6c24 588b 
+  0x00000278d61e9198: e94c 894c | 2450 4889 | 7424 4844 | 8944 2434 | 4489 7424 | 2c44 8954 | 2428 8bf8 | 418b f341 
+  0x00000278d61e91b8: 2bfb 458b | da44 2b5c | 246c 3b7c | 246c 8b5c | 246c 0f4f | fb45 85db | 0f8c 1105 | 0000 85f6 
+  0x00000278d61e91d8: 0f8c 0905 | 0000 468d | 141f 413b | ca0f 82fc | 0400 0044 | 8d14 3e41 | 3bc2 0f82 | ef04 0000 
+  0x00000278d61e91f8: 85ff 0f8c | e704 0000 | 85ff 742e | 4c8b 5424 | 604b 8d4c | 1a10 4d8d | 14d4 498d | 5432 104c 
+  0x00000278d61e9218: 63c7 c5f8 | 7749 ba60 | 367c d578 | 0200 0041 
+
+  0x00000278d61e9228: ;   {post_call_nop}
+  0x00000278d61e9228: ffd2 0f1f | 8400 0000 | 0000 8b44 | 246c 2bc7 | 85c0 0f8f | cb03 0000 | 448b de4d 
+
+  0x00000278d61e9244: ; ImmutableOopMap {[32]=Oop [44]=NarrowOop [52]=NarrowOop [64]=Oop [80]=Oop [88]=Oop [96]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@127 (line 195)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+                      ;   {poll}
+  0x00000278d61e9244: 8b57 3041 | 8502 85c0 | 0f8f fefe | ffff 4c8b | 5c24 5044 | 8b44 2468 | 4589 4314 | 488d 8424 
+  0x00000278d61e9264: 9000 0000 | 418b 8758 | 0600 004d | 8b13 4d3b | 5c07 f80f | 852e 0000 | 0041 83af | 5806 0000 
+  0x00000278d61e9284: 084d 3b5c | 07f0 0f84 | 6500 0000 | 498b c248 | 83e0 fc49 | 83ca 01f0 | 4d0f b113 | 0f85 260e 
+  0x00000278d61e92a4: 0000 e94a | 0000 0049 | 83ba 8600 | 0000 0075 | 3949 c742 | 3e00 0000 | 00f0 8344 | 24c0 0049 
+  0x00000278d61e92c4: 8b82 8e00 | 0000 490b | 8296 0000 | 0074 2249 | 83ba 9e00 | 0000 0075 | 1849 83e2 | fd4d 8997 
+  0x00000278d61e92e4: 6805 0000 | 4183 ca01 | eb0a 49ff | 8a86 0000 | 0045 33d2 | 0f85 a507 | 0000 4c8b | 5c24 484c 
+  0x00000278d61e9304: 8b54 2440 | 4d01 5a20 | 4d01 5a10 | 448b 4424 | 344f 8b54 | c410 4d03 | d34f 8954 | c410 4c8b 
+  0x00000278d61e9324: 5424 2045 | 8b52 0c4d 
+
+  0x00000278d61e932c: ; ImmutableOopMap {r10=NarrowOop [32]=Oop [64]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+                      ;   {poll}
+  0x00000278d61e932c: 8b5f 3041 | 8503 478b | 5cd4 3045 | 85db 0f84 | 1403 0000 | 4f8d 0cdc | 488d 9c24 | 9000 0000 
+  0x00000278d61e934c: 4d8b 0141 | 8b9f 5806 | 0000 41f6 | c002 0f85 | 3700 0000 | 81fb a706 | 0000 0f8f | 4b00 0000 
+  0x00000278d61e936c: 4d3b 4c1f | f874 1649 | 8bc0 4883 | c801 4983 | e0fe f04d | 0fb1 010f | 852e 0000 | 004d 890c 
+  0x00000278d61e938c: 1f41 8387 | 5806 0000 | 08eb 1e48 | 33c0 498b | 9f48 0400 | 00f0 490f | b158 3e74 | 0c48 3bd8 
+  0x00000278d61e93ac: 7509 49ff | 8086 0000 | 0033 c00f | 85bb 0200 | 0043 8b6c | d434 85ed | 0f85 c105 | 0000 438b 
+  0x00000278d61e93cc: 7cd4 0c43 | 8b5c d420 | 488d 8424 | 9000 0000 | 418b 8758 | 0600 004d | 8b11 4d3b | 4c07 f80f 
+  0x00000278d61e93ec: 852e 0000 | 0041 83af | 5806 0000 | 084d 3b4c | 07f0 0f84 | 6500 0000 | 498b c248 | 83e0 fc49 
+  0x00000278d61e940c: 83ca 01f0 | 4d0f b111 | 0f85 a50c | 0000 e94a | 0000 0049 | 83ba 8600 | 0000 0075 | 3949 c742 
+  0x00000278d61e942c: ;   {no_reloc}
+  0x00000278d61e942c: 3e00 0000 | 00f0 8344 | 24c0 0049 | 8b82 8e00 | 0000 490b | 8296 0000 | 0074 2249 | 83ba 9e00 
+  0x00000278d61e944c: 0000 0075 | 1849 83e2 | fd4d 8997 | 6805 0000 | 4183 ca01 | eb0a 49ff | 8a86 0000 | 0045 33d2 
+  0x00000278d61e946c: 0f85 4a02 | 0000 3bdf | 7532 4c8b | 5424 2049 | 8b42 1048 | 2b44 2438 | 4c63 5424 | 304c 8b5c 
+  0x00000278d61e948c: 2420 4d01 | 5318 c5f8 | 7748 81c4 | a000 0000 
+
+  0x00000278d61e949c: ;   {poll_return}
+  0x00000278d61e949c: 5d49 3b67 | 280f 8702 | 0c00 00c3 | 4c8b 5424 | 2045 8b5a | 2c43 8b7c | dc0c 458b | 420c 4585 
+  0x00000278d61e94bc: c00f 8475 | 0100 004b | 8d14 c44f | 8d04 dc45 | 33c9 33f6 
+
+  0x00000278d61e94d0: ;   {optimized virtual_call}
+  0x00000278d61e94d0: c5f8 77e8 
+
+  0x00000278d61e94d4: ; ImmutableOopMap {[32]=Oop [64]=Oop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@5 (line 442)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@14 (line 201)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e94d4: f8c9 ffff 
+
+  0x00000278d61e94d8: ;   {post_call_nop}
+  0x00000278d61e94d8: 0f1f 8400 | d00a 0002 | 448b d085 | c00f 8e37 | feff ff4c | 8b5c 2440 | 458b 4334 | 4c8b 5c24 
+  0x00000278d61e94f8: 2045 8b73 | 2c47 8b5c 
+
+  0x00000278d61e9500: ;   {metadata('org/codehaus/plexus/archiver/zip/DeferredScatterOutputStream')}
+  0x00000278d61e9500: c408 4181 | fb00 9421 | 010f 8599 | 0400 004f | 8d1c c445 | 8b43 0c43 | 0fb6 6cc4 | 1885 ed0f 
+  0x00000278d61e9520: 853b 0700 | 004f 635c | c40c 4863 | f04c 8bce | 4f03 4cc4 | 104d 3bcb | 0f8f 4607 | 0000 438b 
+  0x00000278d61e9540: 6cc4 2845 | 8b5c ec08 
+
+  0x00000278d61e9548: ;   {metadata('org/codehaus/plexus/archiver/zip/ByteArrayOutputStream')}
+  0x00000278d61e9548: 4181 fb70 | 0522 010f | 8597 0400 | 004d 8d0c | ec43 8b4c | f40c 8d59 | 013b c30f | 8353 0700 
+  0x00000278d61e9568: 0085 c00f | 8497 0700 | 004b 8d2c | c44b 8d3c | f448 8d9c | 2490 0000 | 004d 8b19 | 418b 9f58 
+  0x00000278d61e9588: 0600 0041 | f6c3 020f | 8537 0000 | 0081 fba7 | 0600 000f | 8f4b 0000 | 004d 3b4c | 1ff8 7416 
+  0x00000278d61e95a8: 498b c348 | 83c8 0149 | 83e3 fef0 | 4d0f b119 | 0f85 2e00 | 0000 4d89 | 0c1f 4183 | 8758 0600 
+  0x00000278d61e95c8: 0008 eb1e | 4833 c049 | 8b9f 4804 | 0000 f049 | 0fb1 5b3e | 740c 483b | d875 0949 | ff83 8600 
+  0x00000278d61e95e8: 0000 33c0 | 0f85 2204 | 0000 418b | 4114 448b | d845 2b59 | 1041 8d1c | 0244 8954 | 246c e972 
+  0x00000278d61e9608: fbff ff89 | 4424 6c48 | 8b54 2450 | 448b 4424 | 6866 6690 
+
+  0x00000278d61e961c: ;   {optimized virtual_call}
+  0x00000278d61e961c: c5f8 77e8 
+
+  0x00000278d61e9620: ; ImmutableOopMap {[32]=Oop [44]=NarrowOop [52]=NarrowOop [64]=Oop [80]=Oop [88]=Oop [96]=Oop }
+                      ;*invokespecial needNewBuffer {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@121 (line 192)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9620: fb0a 0000 
+
+  0x00000278d61e9624: ;   {post_call_nop}
+  0x00000278d61e9624: 0f1f 8400 | 1c0c 0003 | 4533 db8b | 4424 6ce9 | 0bfc ffff | baf6 ffff | ff41 8beb | 897c 2420 
+  0x00000278d61e9644: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9644: c5f8 77e8 
+
+  0x00000278d61e9648: ; ImmutableOopMap {rbp=NarrowOop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@14 (line 201)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9648: 14e1 6bff 
+
+  0x00000278d61e964c: ;   {post_call_nop}
+  0x00000278d61e964c: 0f1f 8400 | 440c 0004 | baf6 ffff | ff44 8b44 | 2430 4489 | 4424 2844 | 8954 242c 
+
+  0x00000278d61e9668: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9668: c5f8 77e8 
+
+  0x00000278d61e966c: ; ImmutableOopMap {[32]=Oop [44]=NarrowOop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::needsInput@6 (line 396)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e966c: f0e0 6bff 
+
+  0x00000278d61e9670: ;   {post_call_nop}
+  0x00000278d61e9670: 0f1f 8400 | 680c 0005 | 4c89 4c24 | 4844 895c | 2434 4b8d | 2cd4 4489 | 5424 2c49 | 8bd1 4c8d 
+  0x00000278d61e9690: 8424 9000 | 0000 6690 
+
+  0x00000278d61e9698: ;   {runtime_call C2 Runtime complete_monitor_locking}
+  0x00000278d61e9698: c5f8 77e8 
+
+  0x00000278d61e969c: ; ImmutableOopMap {rbp=Oop [32]=Oop [44]=NarrowOop [52]=NarrowOop [64]=Oop [72]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::needsInput@6 (line 396)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e969c: c093 6cff 
+
+  0x00000278d61e96a0: ;   {post_call_nop}
+  0x00000278d61e96a0: 0f1f 8400 | 980c 0006 | 448b 5424 | 2c44 8b5c | 2434 4c8b | 4c24 48e9 | 01fd ffff | 498b c948 
+  0x00000278d61e96c0: 8d94 2490 | 0000 004d | 8bc7 c5f8 | 7749 bae0 | 0f89 96fb | 7f00 0041 
+
+  0x00000278d61e96d8: ;   {post_call_nop}
+  0x00000278d61e96d8: ffd2 0f1f | 8400 0000 | 0000 e98b | fdff ffba | ccff ffff | 448b 4424 | 6844 8944 | 2460 448b 
+  0x00000278d61e96f8: 5424 6c44 | 8954 2464 | 4489 5c24 | 7444 896c | 2478 8974 | 247c 89bc | 2480 0000 | 0066 6690 
+  0x00000278d61e9718: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9718: c5f8 77e8 
+
+  0x00000278d61e971c: ; ImmutableOopMap {[32]=Oop [44]=NarrowOop [52]=NarrowOop [64]=Oop [80]=Oop [120]=NarrowOop }
+                      ;*invokestatic arraycopy {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@103 (line 188)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e971c: 40e0 6bff 
+
+  0x00000278d61e9720: ;   {post_call_nop}
+  0x00000278d61e9720: 0f1f 8400 | 180d 0007 | bae4 ffff | ff48 8b6c | 2420 895c | 2440 894c | 2444 4c89 | 4424 4844 
+  0x00000278d61e9740: 894c 2450 | 4c89 4424 | 5844 894c | 2454 897c | 2468 6690 
+
+  0x00000278d61e9754: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9754: c5f8 77e8 
+
+  0x00000278d61e9758: ; ImmutableOopMap {rbp=Oop [64]=NarrowOop [72]=Oop [88]=Oop }
+                      ;*invokestatic checkIndex {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.CRC32::updateBytesCheck@16 (line 152)
+                      ; - java.util.zip.CRC32::updateBytes@3 (line 139)
+                      ; - java.util.zip.CRC32::update@31 (line 79)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9758: 04e0 6bff 
+
+  0x00000278d61e975c: ;   {post_call_nop}
+  0x00000278d61e975c: 0f1f 8400 | 540d 0008 | bae4 ffff | ff89 5c24 | 3489 4c24 | 484c 8944 | 2450 4489 | 4c24 4c89 
+  0x00000278d61e977c: 7c24 5c90 
+
+  0x00000278d61e9780: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9780: c5f8 77e8 
+
+  0x00000278d61e9784: ; ImmutableOopMap {[32]=Oop [52]=NarrowOop [80]=Oop }
+                      ;*invokestatic checkIndex {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.CRC32::updateBytesCheck@30 (line 153)
+                      ; - java.util.zip.CRC32::updateBytes@3 (line 139)
+                      ; - java.util.zip.CRC32::update@31 (line 79)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9784: d8df 6bff 
+
+  0x00000278d61e9788: ;   {post_call_nop}
+  0x00000278d61e9788: 0f1f 8400 | 800d 0009 | baf6 ffff | ff48 8b6c | 2420 4c89 | 6c24 4089 | 7424 2c44 | 8944 2434 
+  0x00000278d61e97a8: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e97a8: c5f8 77e8 
+
+  0x00000278d61e97ac: ; ImmutableOopMap {rbp=Oop [52]=NarrowOop [64]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::finished@6 (line 419)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 319)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e97ac: b0df 6bff 
+
+  0x00000278d61e97b0: ;   {post_call_nop}
+  0x00000278d61e97b0: 0f1f 8400 | a80d 000a | baf6 ffff | ff48 8b6c | 2420 4489 | 4424 2c4c | 896c 2440 | 8974 2434 
+  0x00000278d61e97d0: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e97d0: c5f8 77e8 
+
+  0x00000278d61e97d4: ; ImmutableOopMap {rbp=Oop [44]=NarrowOop [64]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::setInput@18 (line 212)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 321)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e97d4: 88df 6bff 
+
+  0x00000278d61e97d8: ;   {post_call_nop}
+  0x00000278d61e97d8: 0f1f 8400 | d00d 000b | baf6 ffff | ff48 8b6c | 2420 448b | 4424 3044 | 8944 2428 | 4489 5424 
+  0x00000278d61e97f8: 2c66 6690 
+
+  0x00000278d61e97fc: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e97fc: c5f8 77e8 
+
+  0x00000278d61e9800: ; ImmutableOopMap {rbp=Oop [44]=NarrowOop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::needsInput@6 (line 396)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9800: 5cdf 6bff 
+
+  0x00000278d61e9804: ;   {post_call_nop}
+  0x00000278d61e9804: 0f1f 8400 | fc0d 000c | 498b cb48 | 8d94 2490 | 0000 004d | 8bc7 c5f8 | 7749 bae0 | 0f89 96fb 
+  0x00000278d61e9824: 7f00 0041 
+
+  0x00000278d61e9828: ;   {post_call_nop}
+  0x00000278d61e9828: ffd2 0f1f | 8400 0000 | 0000 e9d1 | f5ff ff4c | 895c 2450 | 4489 7424 | 4489 7424 | 4089 7c24 
+  0x00000278d61e9848: 344c 896c | 2428 4b8d | 2cc4 4489 | 4424 4849 | 8bd3 4c8d | 8424 9000 | 0000 6690 
+
+  0x00000278d61e9864: ;   {runtime_call C2 Runtime complete_monitor_locking}
+  0x00000278d61e9864: c5f8 77e8 
+
+  0x00000278d61e9868: ; ImmutableOopMap {rbp=Oop [32]=Oop [40]=Oop [72]=NarrowOop [80]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::finished@6 (line 419)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 319)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9868: f491 6cff 
+
+  0x00000278d61e986c: ;   {post_call_nop}
+  0x00000278d61e986c: 0f1f 8400 | 640e 000d | 4c8b 6c24 | 288b 7c24 | 348b 7424 | 4044 8b74 | 2444 448b | 4424 484c 
+  0x00000278d61e988c: 8b5c 2450 | e9cf f4ff | ff48 897c | 2448 4489 | 7424 4089 | 7424 344c | 896c 2428 | 4b8d 2cc4 
+  0x00000278d61e98ac: 4489 4424 | 4448 8bd7 | 4c8d 8424 | 9000 0000 
+
+  0x00000278d61e98bc: ;   {runtime_call C2 Runtime complete_monitor_locking}
+  0x00000278d61e98bc: c5f8 77e8 
+
+  0x00000278d61e98c0: ; ImmutableOopMap {rbp=Oop [32]=Oop [40]=Oop [68]=NarrowOop [72]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::setInput@18 (line 212)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 321)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e98c0: 9c91 6cff 
+
+  0x00000278d61e98c4: ;   {post_call_nop}
+  0x00000278d61e98c4: 0f1f 8400 | bc0e 000e | 4c8b 6c24 | 288b 7424 | 3444 8b74 | 2440 448b | 4424 4448 | 8b7c 2448 
+  0x00000278d61e98e4: e9ef f5ff | ff48 8bcf | 488d 9424 | 9000 0000 | 4d8b c7c5 | f877 49ba | e00f 8996 | fb7f 0000 
+  0x00000278d61e9904: ;   {post_call_nop}
+  0x00000278d61e9904: 41ff d20f | 1f84 0000 | 0000 00e9 | caf6 ffff | 4c89 4c24 | 4044 895c | 2434 448b | 4424 3044 
+  0x00000278d61e9924: 8944 2428 | 4b8d 2cd4 | 4489 5424 | 2c49 8bd1 | 4c8d 8424 | 9000 0000 
+
+  0x00000278d61e993c: ;   {runtime_call C2 Runtime complete_monitor_locking}
+  0x00000278d61e993c: c5f8 77e8 
+
+  0x00000278d61e9940: ; ImmutableOopMap {rbp=Oop [32]=Oop [44]=NarrowOop [52]=NarrowOop [64]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::needsInput@6 (line 396)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9940: 1c91 6cff 
+
+  0x00000278d61e9944: ;   {post_call_nop}
+  0x00000278d61e9944: 0f1f 8400 | 3c0f 000f | 448b 5424 | 2c44 8b5c | 2434 4c8b | 4c24 40e9 | 12f7 ffff | 498b c948 
+  0x00000278d61e9964: 8d94 2490 | 0000 004d | 8bc7 c5f8 | 7749 bae0 | 0f89 96fb | 7f00 0041 
+
+  0x00000278d61e997c: ;   {post_call_nop}
+  0x00000278d61e997c: ffd2 0f1f | 8400 0000 | 0000 e99c | f7ff ffba | 4dff ffff | 4489 5c24 | 4066 6690 
+
+  0x00000278d61e9998: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9998: c5f8 77e8 
+
+  0x00000278d61e999c: ; ImmutableOopMap {rbp=NarrowOop [32]=Oop [64]=NarrowOop }
+                      ;*ifnonnull {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.Deflater::needsInput@13 (line 398)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e999c: c0dd 6bff 
+
+  0x00000278d61e99a0: ;   {post_call_nop}
+  0x00000278d61e99a0: 0f1f 8400 | 980f 0010 | bade ffff | ff44 8b5c | 2430 4489 | 5c24 284c | 8b5c 2438 | 4c89 5c24 
+  0x00000278d61e99c0: 304c 8b5c | 2440 4c89 | 5c24 3844 | 8944 2440 | 4489 7424 | 4489 4424 | 4866 6690 
+
+  0x00000278d61e99dc: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e99dc: c5f8 77e8 
+
+  0x00000278d61e99e0: ; ImmutableOopMap {[32]=Oop [56]=Oop [64]=NarrowOop [68]=NarrowOop }
+                      ;*invokeinterface writeOut {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e99e0: 7cdd 6bff 
+
+  0x00000278d61e99e4: ;   {post_call_nop}
+  0x00000278d61e99e4: 0f1f 8400 | dc0f 0011 | bade ffff | ff44 8944 | 2448 8944 | 244c 4489 | 7424 5089 | 4424 5490 
+  0x00000278d61e9a04: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9a04: c5f8 77e8 
+
+  0x00000278d61e9a08: ; ImmutableOopMap {rbp=NarrowOop [32]=Oop [64]=Oop [72]=NarrowOop [80]=NarrowOop }
+                      ;*invokevirtual write {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9a08: 54dd 6bff 
+
+  0x00000278d61e9a0c: ;   {post_call_nop}
+  0x00000278d61e9a0c: 0f1f 8400 | 0410 0012 | 4889 7c24 | 6848 896c | 2460 894c | 244c 4c89 | 4c24 5848 | 8974 2450 
+  0x00000278d61e9a2c: 4489 4424 | 4844 8974 | 2434 4489 | 5424 2c44 | 8b5c 2430 | 4489 5c24 | 2848 8b6c | 2420 498b 
+  0x00000278d61e9a4c: d14c 8d84 | 2490 0000 | 0066 6690 
+
+  0x00000278d61e9a58: ;   {runtime_call C2 Runtime complete_monitor_locking}
+  0x00000278d61e9a58: c5f8 77e8 
+
+  0x00000278d61e9a5c: ; ImmutableOopMap {rbp=Oop [52]=NarrowOop [64]=Oop [72]=NarrowOop [88]=Oop [96]=Oop [104]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@45 (line 180)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9a5c: 0090 6cff 
+
+  0x00000278d61e9a60: ;   {post_call_nop}
+  0x00000278d61e9a60: 0f1f 8400 | 5810 0013 | 4889 6c24 | 2044 8b54 | 2428 4489 | 5424 3044 | 8b54 242c | 448b 7424 
+  0x00000278d61e9a80: 3444 8b44 | 2448 488b | 7424 504c | 8b4c 2458 | 8b4c 244c | 488b 6c24 | 6048 8b7c | 2468 e94f 
+  0x00000278d61e9aa0: fbff ff49 | 8bcb 488d | 9424 9000 | 0000 4d8b | c7c5 f877 | 49ba e00f | 8996 fb7f | 0000 41ff 
+  0x00000278d61e9ac0: ;   {post_call_nop}
+  0x00000278d61e9ac0: d20f 1f84 | 0000 0000 | 00e9 30f8 | ffff babe | ffff ff49 | 8bea 448b | 5424 3044 | 8954 2428 
+  0x00000278d61e9ae0: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9ae0: c5f8 77e8 
+
+  0x00000278d61e9ae4: ; ImmutableOopMap {rbp=Oop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@7 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9ae4: 78dc 6bff 
+
+  0x00000278d61e9ae8: ;   {post_call_nop}
+  0x00000278d61e9ae8: 0f1f 8400 | e010 0014 | ba4d ffff | ff89 5c24 | 344c 8944 | 2448 4489 | 4c24 5044 | 894c 2458 
+  0x00000278d61e9b08: 897c 2460 
+
+  0x00000278d61e9b0c: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9b0c: c5f8 77e8 
+
+  0x00000278d61e9b10: ; ImmutableOopMap {[32]=Oop [52]=NarrowOop [72]=Oop }
+                      ;*iflt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) jdk.internal.util.Preconditions::checkFromIndexSize@5 (line 396)
+                      ; - java.util.zip.CRC32::update@19 (line 78)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9b10: 4cdc 6bff 
+
+  0x00000278d61e9b14: ;   {post_call_nop}
+  0x00000278d61e9b14: 0f1f 8400 | 0c11 0015 | ba4d ffff | ff48 8b6c | 2420 4c89 | 6c24 2089 | 7424 2844 | 8b44 2430 
+  0x00000278d61e9b34: 4489 4424 | 2c4c 8b5c | 2438 4c89 | 5c24 3044 | 8954 2438 
+
+  0x00000278d61e9b48: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9b48: c5f8 77e8 
+
+  0x00000278d61e9b4c: ; ImmutableOopMap {rbp=Oop [32]=Oop }
+                      ;*if_icmpne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::write@20 (line 298)
+  0x00000278d61e9b4c: 10dc 6bff 
+
+  0x00000278d61e9b50: ;   {post_call_nop}
+  0x00000278d61e9b50: 0f1f 8400 | 4811 0016 | ba4d ffff | ff44 8b5c | 2430 4489 | 5c24 2890 
+
+  0x00000278d61e9b68: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9b68: c5f8 77e8 
+
+  0x00000278d61e9b6c: ; ImmutableOopMap {[32]=Oop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@11 (line 319)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9b6c: f0db 6bff 
+
+  0x00000278d61e9b70: ;   {post_call_nop}
+  0x00000278d61e9b70: 0f1f 8400 | 6811 0017 | ba4d ffff | ff44 8944 | 2434 4c89 | 6c24 4089 | 7424 5089 | 7c24 5890 
+  0x00000278d61e9b90: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9b90: c5f8 77e8 
+
+  0x00000278d61e9b94: ; ImmutableOopMap {[32]=Oop [52]=NarrowOop [64]=Oop }
+                      ;*iflt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) jdk.internal.util.Preconditions::checkFromIndexSize@5 (line 396)
+                      ; - java.util.zip.Deflater::setInput@7 (line 211)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 321)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9b94: c8db 6bff 
+
+  0x00000278d61e9b98: ;   {post_call_nop}
+  0x00000278d61e9b98: 0f1f 8400 | 9011 0018 | ba4d ffff | ff44 895c | 2440 6690 
+
+  0x00000278d61e9bac: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9bac: c5f8 77e8 
+
+  0x00000278d61e9bb0: ; ImmutableOopMap {rbp=NarrowOop [32]=Oop [64]=NarrowOop }
+                      ;*ifnonnull {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.Deflater::needsInput@13 (line 398)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9bb0: acdb 6bff 
+
+  0x00000278d61e9bb4: ;   {post_call_nop}
+  0x00000278d61e9bb4: 0f1f 8400 | ac11 0019 | ba4d ffff | ff89 5c24 | 344c 8944 | 2448 4489 | 4c24 5044 | 894c 2458 
+  0x00000278d61e9bd4: 897c 2460 
+
+  0x00000278d61e9bd8: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9bd8: c5f8 77e8 
+
+  0x00000278d61e9bdc: ; ImmutableOopMap {[32]=Oop [52]=NarrowOop [72]=Oop }
+                      ;*if_icmple {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) jdk.internal.util.Preconditions::checkFromIndexSize@12 (line 396)
+                      ; - java.util.zip.CRC32::update@19 (line 78)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9bdc: 80db 6bff 
+
+  0x00000278d61e9be0: ;   {post_call_nop}
+  0x00000278d61e9be0: 0f1f 8400 | d811 001a | ba4d ffff | ff48 8b6c | 2420 895c | 2440 894c | 2444 4c89 | 4424 4844 
+  0x00000278d61e9c00: 894c 2450 
+
+  0x00000278d61e9c04: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9c04: c5f8 77e8 
+
+  0x00000278d61e9c08: ; ImmutableOopMap {rbp=Oop [64]=NarrowOop [72]=Oop }
+                      ;*ifgt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.CRC32::updateBytesCheck@1 (line 147)
+                      ; - java.util.zip.CRC32::updateBytes@3 (line 139)
+                      ; - java.util.zip.CRC32::update@31 (line 79)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9c08: 54db 6bff 
+
+  0x00000278d61e9c0c: ;   {post_call_nop}
+  0x00000278d61e9c0c: 0f1f 8400 | 0412 001b | ba4d ffff | ff48 8b6c | 2420 4c89 | 6c24 4089 | 7424 2c90 
+
+  0x00000278d61e9c28: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9c28: c5f8 77e8 
+
+  0x00000278d61e9c2c: ; ImmutableOopMap {rbp=Oop [64]=Oop }
+                      ;*if_icmpgt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@18 (line 320)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9c2c: 30db 6bff 
+
+  0x00000278d61e9c30: ;   {post_call_nop}
+  0x00000278d61e9c30: 0f1f 8400 | 2812 001c | ba4d ffff | ff44 8944 | 2434 4c89 | 6c24 4089 | 7424 5089 | 7c24 5890 
+  0x00000278d61e9c50: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9c50: c5f8 77e8 
+
+  0x00000278d61e9c54: ; ImmutableOopMap {[32]=Oop [52]=NarrowOop [64]=Oop }
+                      ;*if_icmple {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) jdk.internal.util.Preconditions::checkFromIndexSize@12 (line 396)
+                      ; - java.util.zip.Deflater::setInput@7 (line 211)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 321)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9c54: 08db 6bff 
+
+  0x00000278d61e9c58: ;   {post_call_nop}
+  0x00000278d61e9c58: 0f1f 8400 | 5012 001d | ba4d ffff | ff44 8944 | 2448 4489 | 7424 4c89 | 4424 5090 
+
+  0x00000278d61e9c74: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9c74: c5f8 77e8 
+
+  0x00000278d61e9c78: ; ImmutableOopMap {[32]=Oop [64]=Oop [72]=NarrowOop [76]=NarrowOop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.io.output.ThresholdingOutputStream::checkThreshold@4 (line 103)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@2 (line 231)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9c78: e4da 6bff 
+
+  0x00000278d61e9c7c: ;   {post_call_nop}
+  0x00000278d61e9c7c: 0f1f 8400 | 7412 001e | 4d3b cbbd | ffff ffff | 7c08 400f | 95c5 400f | b6ed ba4d | ffff ff44 
+  0x00000278d61e9c9c: 8974 244c | 8944 2450 | 4489 4424 | 5466 6690 
+
+  0x00000278d61e9cac: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9cac: c5f8 77e8 
+
+  0x00000278d61e9cb0: ; ImmutableOopMap {[32]=Oop [64]=Oop [76]=NarrowOop [84]=NarrowOop }
+                      ;*ifle {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.io.output.ThresholdingOutputStream::checkThreshold@20 (line 103)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@2 (line 231)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9cb0: acda 6bff 
+
+  0x00000278d61e9cb4: ;   {post_call_nop}
+  0x00000278d61e9cb4: 0f1f 8400 | ac12 001f | ba45 ffff | ff44 8b5c | 2430 4489 | 5c24 284c | 8b5c 2438 | 4c89 5c24 
+  0x00000278d61e9cd4: 304c 8b5c | 2440 4c89 | 5c24 3844 | 8944 2440 | 8944 2444 | 4c89 4c24 | 4844 8974 | 2450 8944 
+  0x00000278d61e9cf4: 2454 6690 
+
+  0x00000278d61e9cf8: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9cf8: c5f8 77e8 
+
+  0x00000278d61e9cfc: ; ImmutableOopMap {[32]=Oop [56]=Oop [64]=NarrowOop [72]=Oop [80]=NarrowOop }
+                      ;*iflt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@11 (line 168)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9cfc: 60da 6bff 
+
+  0x00000278d61e9d00: ;   {post_call_nop}
+  0x00000278d61e9d00: 0f1f 8400 | f812 0020 | ba4d ffff | ff44 8b4c | 2430 4489 | 4c24 284c | 8b5c 2438 | 4c89 5c24 
+  0x00000278d61e9d20: 304c 8b5c | 2440 4c89 | 5c24 3844 | 8944 2440 | 8944 2444 | 8944 2448 
+
+  0x00000278d61e9d38: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9d38: c5f8 77e8 
+
+  0x00000278d61e9d3c: ; ImmutableOopMap {[32]=Oop [56]=Oop [64]=NarrowOop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@37 (line 176)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9d3c: 20da 6bff 
+
+  0x00000278d61e9d40: ;   {post_call_nop}
+  0x00000278d61e9d40: 0f1f 8400 | 3813 0021 | 488b d0c5 | f877 4881 | c4a0 0000 
+
+  0x00000278d61e9d54: ;   {runtime_call C2 Runtime rethrow}
+  0x00000278d61e9d54: 005d e905 | 966c ffba | f6ff ffff 
+
+  0x00000278d61e9d60: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9d60: c5f8 77e8 
+
+  0x00000278d61e9d64: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@13 (line 201)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9d64: f8d9 6bff 
+
+  0x00000278d61e9d68: ;   {post_call_nop}
+  0x00000278d61e9d68: 0f1f 8400 | 6013 0022 | baf6 ffff | ff66 6690 
+
+  0x00000278d61e9d78: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9d78: c5f8 77e8 
+
+  0x00000278d61e9d7c: ; ImmutableOopMap {}
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9d7c: e0d9 6bff 
+
+  0x00000278d61e9d80: ;   {post_call_nop}
+  0x00000278d61e9d80: 0f1f 8400 | 7813 0023 | baf6 ffff | ff8b 4c24 | 3089 4c24 | 2848 8b4c | 2438 4889 | 4c24 3048 
+  0x00000278d61e9da0: 8b4c 2440 | 4889 4c24 | 3844 8944 | 2440 4489 | 5424 4444 | 8974 2450 | 4489 5424 | 544c 894c 
+  0x00000278d61e9dc0: 2458 895c | 2460 4489 | 5c24 684c | 894c 2470 
+
+  0x00000278d61e9dd0: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9dd0: c5f8 77e8 
+
+  0x00000278d61e9dd4: ; ImmutableOopMap {[32]=Oop [56]=Oop [64]=NarrowOop [80]=NarrowOop [88]=Oop [112]=Oop }
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@79 (line 187)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9dd4: 88d9 6bff 
+
+  0x00000278d61e9dd8: ;   {post_call_nop}
+  0x00000278d61e9dd8: 0f1f 8400 | d013 0024 | baf6 ffff | ff49 8be8 | 4489 4c24 | 2066 6690 
+
+  0x00000278d61e9df0: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9df0: c5f8 77e8 
+
+  0x00000278d61e9df4: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokevirtual update {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9df4: 68d9 6bff 
+
+  0x00000278d61e9df8: ;   {post_call_nop}
+  0x00000278d61e9df8: 0f1f 8400 | f013 0025 | baf6 ffff | ff66 6690 
+
+  0x00000278d61e9e08: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9e08: c5f8 77e8 
+
+  0x00000278d61e9e0c: ; ImmutableOopMap {}
+                      ;*invokevirtual finished {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 319)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9e0c: 50d9 6bff 
+
+  0x00000278d61e9e10: ;   {post_call_nop}
+  0x00000278d61e9e10: 0f1f 8400 | 0814 0026 | baf6 ffff | ff49 8bed | 8974 2420 
+
+  0x00000278d61e9e24: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9e24: c5f8 77e8 
+
+  0x00000278d61e9e28: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 321)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9e28: 34d9 6bff 
+
+  0x00000278d61e9e2c: ;   {post_call_nop}
+  0x00000278d61e9e2c: 0f1f 8400 | 2414 0027 | baf6 ffff | ff66 6690 
+
+  0x00000278d61e9e3c: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9e3c: c5f8 77e8 
+
+  0x00000278d61e9e40: ; ImmutableOopMap {}
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 229)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9e40: 1cd9 6bff 
+
+  0x00000278d61e9e44: ;   {post_call_nop}
+  0x00000278d61e9e44: 0f1f 8400 | 3c14 0028 | baf6 ffff | ff41 8bee | 8944 2420 
+
+  0x00000278d61e9e58: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9e58: c5f8 77e8 
+
+  0x00000278d61e9e5c: ; ImmutableOopMap {rbp=NarrowOop }
+                      ;*invokeinterface writeOut {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9e5c: 00d9 6bff 
+
+  0x00000278d61e9e60: ;   {post_call_nop}
+  0x00000278d61e9e60: 0f1f 8400 | 5814 0029 | baf6 ffff | ff41 8bee | 8944 2420 
+
+  0x00000278d61e9e74: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9e74: c5f8 77e8 
+
+  0x00000278d61e9e78: ; ImmutableOopMap {rbp=NarrowOop }
+                      ;*invokevirtual write {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9e78: e4d8 6bff 
+
+  0x00000278d61e9e7c: ;   {post_call_nop}
+  0x00000278d61e9e7c: 0f1f 8400 | 7414 002a | baf6 ffff | ff41 8bee | 8944 2420 
+
+  0x00000278d61e9e90: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9e90: c5f8 77e8 
+
+  0x00000278d61e9e94: ; ImmutableOopMap {rbp=NarrowOop }
+                      ;*invokevirtual write {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9e94: c8d8 6bff 
+
+  0x00000278d61e9e98: ;   {post_call_nop}
+  0x00000278d61e9e98: 0f1f 8400 | 9014 002b | baf6 ffff | ff8b 4c24 | 3089 4c24 | 284c 8b5c | 2438 4c89 | 5c24 304c 
+  0x00000278d61e9eb8: 8b5c 2440 | 4c89 5c24 | 3844 8944 | 2440 8944 | 2444 4c89 | 4c24 4889 | 4424 5090 
+
+  0x00000278d61e9ed4: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9ed4: c5f8 77e8 
+
+  0x00000278d61e9ed8: ; ImmutableOopMap {[32]=Oop [56]=Oop [64]=NarrowOop [72]=Oop }
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@6 (line 168)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9ed8: 84d8 6bff 
+
+  0x00000278d61e9edc: ;   {post_call_nop}
+  0x00000278d61e9edc: 0f1f 8400 | d414 002c | ba4d ffff | ff48 8b6c | 2420 4489 | 4c24 2c4c | 8944 2440 | 4c89 4424 
+  0x00000278d61e9efc: 4866 6690 
+
+  0x00000278d61e9f00: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9f00: c5f8 77e8 
+
+  0x00000278d61e9f04: ; ImmutableOopMap {rbp=Oop [64]=Oop [72]=Oop }
+                      ;*ifnonnull {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.zip.CRC32::update@1 (line 75)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@13 (line 297)
+  0x00000278d61e9f04: 58d8 6bff 
+
+  0x00000278d61e9f08: ;   {post_call_nop}
+  0x00000278d61e9f08: 0f1f 8400 | 0015 002d | ba9d ffff | ff44 8b54 | 2430 4489 | 5424 2c44 | 8b54 2434 | 4489 5424 
+  0x00000278d61e9f28: 3048 8944 | 2458 6690 
+
+  0x00000278d61e9f30: ;   {runtime_call UncommonTrapBlob}
+  0x00000278d61e9f30: c5f8 77e8 
+
+  0x00000278d61e9f34: ; ImmutableOopMap {[32]=Oop [48]=NarrowOop [64]=Oop [80]=Oop [88]=Oop }
+                      ;*astore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@142 (line 197)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 83)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 312)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 203)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 230)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 322)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::write@27 (line 299)
+  0x00000278d61e9f34: 28d8 6bff 
+
+  0x00000278d61e9f38: ;   {post_call_nop}
+  0x00000278d61e9f38: 0f1f 8400 | 3015 002e | 8b13 48c1 | e203 4883 | fa00 0f84 | a5ef ffff | 498b 7738 | 4885 f60f 
+  0x00000278d61e9f58: 8414 0000 | 0048 83ee | 0849 8977 | 3849 0377 | 4048 8916 | e984 efff | ff48 83ec | 504c 8954 
+  0x00000278d61e9f78: 2448 4c89 | 5c24 404c | 8944 2438 | 4c89 4c24 | 3048 894c | 2428 4889 | 7c24 2048 | 8bca 498b 
+  0x00000278d61e9f98: ;   {runtime_call}
+  0x00000278d61e9f98: d748 b850 | 4944 96fb | 7f00 00ff | d048 8b7c | 2420 488b | 4c24 284c | 8b4c 2430 | 4c8b 4424 
+  0x00000278d61e9fb8: 384c 8b5c | 2440 4c8b | 5424 48c5 | f877 4883 | c450 e926 | efff ff41 | 8b0a 48c1 | e103 4883 
+  0x00000278d61e9fd8: f900 0f84 | 28ef ffff | 4d8b 4f38 | 4d85 c90f | 8414 0000 | 0049 83e9 | 084d 894f | 384d 034f 
+  0x00000278d61e9ff8: 4049 8909 | e907 efff | ff48 83ec | 404c 8954 | 2438 4c89 | 5c24 3048 | 897c 2428 
+
+  0x00000278d61ea014: ;   {runtime_call}
+  0x00000278d61ea014: 498b d748 | b850 4944 | 96fb 7f00 | 00ff d048 | 8b7c 2428 | 4c8b 5c24 | 304c 8b54 | 2438 c5f8 
+  0x00000278d61ea034: 7748 83c4 | 40e9 caee | ffff f083 | 4424 c000 | 4180 3900 | 0f84 f2ee | ffff 41c6 | 0100 498b 
+  0x00000278d61ea054: 4f50 4885 | c90f 8414 | 0000 0048 | 83e9 0849 | 894f 5049 | 034f 584c | 8909 e9cd | eeff ff48 
+  0x00000278d61ea074: 83ec 304c | 895c 2428 | 4889 7c24 | 2049 8bc9 
+
+  0x00000278d61ea084: ;   {runtime_call}
+  0x00000278d61ea084: 498b d748 | b830 4944 | 96fb 7f00 | 00ff d048 | 8b7c 2420 | 4c8b 5c24 | 28c5 f877 | 4883 c430 
+  0x00000278d61ea0a4: e997 eeff 
+
+  0x00000278d61ea0a8: ;   {internal_word}
+  0x00000278d61ea0a8: ff49 ba9d | 941e d678 | 0200 004d | 8997 6004 
+
+  0x00000278d61ea0b8: ;   {runtime_call SafepointBlob}
+  0x00000278d61ea0b8: 0000 e921 | bc5f ff41 | 8387 5806 | 0000 08e9 | a0f3 ffff | 4183 8758 | 0600 0008 | e91f f2ff 
+  0x00000278d61ea0d8: ff41 8387 | 5806 0000 | 08e9 3bf0 | ffff 4183 | 8758 0600 | 0008 e9e5 | eeff ff41 | 8387 5806 
+  0x00000278d61ea0f8: 0000 08e9 | 02ed ffff 
+
+  0x00000278d61ea100: ;   {runtime_call StubRoutines (final stubs)}
+  0x00000278d61ea100: e8fb b75d | ffe9 24eb | ffff f4f4 | f4f4 f4f4 
+[Stub Code]
+  0x00000278d61ea110: ;   {no_reloc}
+  0x00000278d61ea110: 48bb 0000 | 0000 0000 
+
+  0x00000278d61ea118: ;   {runtime_call nmethod}
+  0x00000278d61ea118: 0000 e9fb 
+
+  0x00000278d61ea11c: ;   {static_stub}
+  0x00000278d61ea11c: ffff ff48 | bba8 9721 | 8178 0200 
+
+  0x00000278d61ea128: ;   {runtime_call I2C/C2I adapters}
+  0x00000278d61ea128: 00e9 88a6 
+
+  0x00000278d61ea12c: ;   {runtime_call ExceptionBlob}
+  0x00000278d61ea12c: 5fff e92d | d96b ffe8 | 0000 0000 | 4883 2c24 
+
+  0x00000278d61ea13c: ;   {runtime_call DeoptimizationBlob}
+  0x00000278d61ea13c: 05e9 3eb1 | 5fff f4f4 | f4f4 f4f4 
+[/MachCode]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000278f1d97e00, length=41, elements={
+0x00000278c5a99770, 0x00000278e80224e0, 0x00000278e8022e20, 0x00000278e8029a20,
+0x00000278e802ab00, 0x00000278e802b630, 0x00000278e802c290, 0x00000278e802d220,
+0x00000278e802e000, 0x00000278c1130420, 0x00000278c1159b40, 0x00000278c11aeab0,
+0x00000278c12be8b0, 0x00000278c1c6bbe0, 0x00000278c1c6cb80, 0x00000278c1f18cc0,
+0x00000278c1f19450, 0x00000278c1ef5e70, 0x00000278c1eeb3c0, 0x00000278c1eebb50,
+0x00000278c22b4760, 0x00000278f0429910, 0x00000278f20925f0, 0x00000278f2cfa010,
+0x00000278f1f78cb0, 0x00000278f1f77e10, 0x00000278f1f76f70, 0x00000278f1f75980,
+0x00000278f1f78560, 0x00000278f1f760d0, 0x00000278f1f76820, 0x00000278f1f776c0,
+0x00000278eb6e7630, 0x00000278eb6e4300, 0x00000278eb6e6040, 0x00000278eb6e7d80,
+0x00000278eb6e51a0, 0x00000278eb6e6790, 0x00000278eb6e4a50, 0x00000278eb6e6ee0,
+0x00000278eb6e58f0
+}
+
+Java Threads: ( => current thread )
+  0x00000278c5a99770 JavaThread "main"                              [_thread_blocked, id=3276, stack(0x0000008108a00000,0x0000008108b00000) (1024K)]
+  0x00000278e80224e0 JavaThread "Reference Handler"          daemon [_thread_blocked, id=14676, stack(0x0000008109200000,0x0000008109300000) (1024K)]
+  0x00000278e8022e20 JavaThread "Finalizer"                  daemon [_thread_blocked, id=15348, stack(0x0000008109300000,0x0000008109400000) (1024K)]
+  0x00000278e8029a20 JavaThread "Signal Dispatcher"          daemon [_thread_blocked, id=3484, stack(0x0000008109400000,0x0000008109500000) (1024K)]
+  0x00000278e802ab00 JavaThread "Attach Listener"            daemon [_thread_blocked, id=15332, stack(0x0000008109500000,0x0000008109600000) (1024K)]
+  0x00000278e802b630 JavaThread "Service Thread"             daemon [_thread_blocked, id=22900, stack(0x0000008109600000,0x0000008109700000) (1024K)]
+  0x00000278e802c290 JavaThread "Monitor Deflation Thread"   daemon [_thread_blocked, id=22976, stack(0x0000008109700000,0x0000008109800000) (1024K)]
+  0x00000278e802d220 JavaThread "C2 CompilerThread0"         daemon [_thread_blocked, id=17196, stack(0x0000008109800000,0x0000008109900000) (1024K)]
+  0x00000278e802e000 JavaThread "C1 CompilerThread0"         daemon [_thread_blocked, id=14560, stack(0x0000008109900000,0x0000008109a00000) (1024K)]
+  0x00000278c1130420 JavaThread "Notification Thread"        daemon [_thread_blocked, id=16932, stack(0x0000008109a00000,0x0000008109b00000) (1024K)]
+  0x00000278c1159b40 JavaThread "Common-Cleaner"             daemon [_thread_blocked, id=10068, stack(0x0000008109b00000,0x0000008109c00000) (1024K)]
+  0x00000278c11aeab0 JavaThread "C1 CompilerThread1"         daemon [_thread_blocked, id=14564, stack(0x0000008109c00000,0x0000008109d00000) (1024K)]
+  0x00000278c12be8b0 JavaThread "C2 CompilerThread1"         daemon [_thread_blocked, id=16928, stack(0x0000008109d00000,0x0000008109e00000) (1024K)]
+  0x00000278c1c6bbe0 JavaThread "C1 CompilerThread2"         daemon [_thread_blocked, id=5300, stack(0x0000008109e00000,0x0000008109f00000) (1024K)]
+  0x00000278c1c6cb80 JavaThread "C1 CompilerThread3"         daemon [_thread_blocked, id=15316, stack(0x0000008109f00000,0x000000810a000000) (1024K)]
+  0x00000278c1f18cc0 JavaThread "C2 CompilerThread2"         daemon [_thread_blocked, id=1868, stack(0x000000810a000000,0x000000810a100000) (1024K)]
+  0x00000278c1f19450 JavaThread "C2 CompilerThread3"         daemon [_thread_blocked, id=4840, stack(0x000000810a100000,0x000000810a200000) (1024K)]
+  0x00000278c1ef5e70 JavaThread "C2 CompilerThread4"         daemon [_thread_blocked, id=22004, stack(0x000000810a200000,0x000000810a300000) (1024K)]
+  0x00000278c1eeb3c0 JavaThread "C2 CompilerThread5"         daemon [_thread_blocked, id=11280, stack(0x000000810a300000,0x000000810a400000) (1024K)]
+  0x00000278c1eebb50 JavaThread "C2 CompilerThread6"         daemon [_thread_blocked, id=10204, stack(0x000000810a400000,0x000000810a500000) (1024K)]
+  0x00000278c22b4760 JavaThread "C2 CompilerThread7"         daemon [_thread_blocked, id=15704, stack(0x000000810a500000,0x000000810a600000) (1024K)]
+  0x00000278f0429910 JavaThread "pool-2-thread-1"                   [_thread_blocked, id=17420, stack(0x000000810b700000,0x000000810b800000) (1024K)]
+  0x00000278f20925f0 JavaThread "pool-2-thread-2"                   [_thread_blocked, id=18736, stack(0x000000810b800000,0x000000810b900000) (1024K)]
+  0x00000278f2cfa010 JavaThread "pool-2-thread-3"                   [_thread_blocked, id=15808, stack(0x000000810b900000,0x000000810ba00000) (1024K)]
+  0x00000278f1f78cb0 JavaThread "pool-2-thread-4"                   [_thread_blocked, id=2488, stack(0x000000810ba00000,0x000000810bb00000) (1024K)]
+  0x00000278f1f77e10 JavaThread "pool-2-thread-5"                   [_thread_blocked, id=21548, stack(0x000000810bb00000,0x000000810bc00000) (1024K)]
+=>0x00000278f1f76f70 JavaThread "pool-2-thread-6"                   [_thread_in_native, id=18720, stack(0x000000810bc00000,0x000000810bd00000) (1024K)]
+  0x00000278f1f75980 JavaThread "pool-2-thread-7"                   [_thread_blocked, id=21580, stack(0x000000810bd00000,0x000000810be00000) (1024K)]
+  0x00000278f1f78560 JavaThread "pool-2-thread-8"                   [_thread_blocked, id=21756, stack(0x000000810be00000,0x000000810bf00000) (1024K)]
+  0x00000278f1f760d0 JavaThread "pool-2-thread-9"                   [_thread_blocked, id=6124, stack(0x000000810bf00000,0x000000810c000000) (1024K)]
+  0x00000278f1f76820 JavaThread "pool-2-thread-10"                  [_thread_in_native, id=23148, stack(0x000000810c000000,0x000000810c100000) (1024K)]
+  0x00000278f1f776c0 JavaThread "pool-2-thread-11"                  [_thread_blocked, id=18316, stack(0x000000810c100000,0x000000810c200000) (1024K)]
+  0x00000278eb6e7630 JavaThread "pool-2-thread-12"                  [_thread_blocked, id=17392, stack(0x000000810c200000,0x000000810c300000) (1024K)]
+  0x00000278eb6e4300 JavaThread "pool-2-thread-13"                  [_thread_blocked, id=18320, stack(0x000000810c300000,0x000000810c400000) (1024K)]
+  0x00000278eb6e6040 JavaThread "pool-2-thread-14"                  [_thread_blocked, id=3320, stack(0x000000810c400000,0x000000810c500000) (1024K)]
+  0x00000278eb6e7d80 JavaThread "pool-2-thread-15"                  [_thread_in_native, id=23472, stack(0x000000810c500000,0x000000810c600000) (1024K)]
+  0x00000278eb6e51a0 JavaThread "pool-2-thread-16"                  [_thread_blocked, id=19280, stack(0x000000810c600000,0x000000810c700000) (1024K)]
+  0x00000278eb6e6790 JavaThread "pool-2-thread-17"                  [_thread_blocked, id=17644, stack(0x000000810c700000,0x000000810c800000) (1024K)]
+  0x00000278eb6e4a50 JavaThread "pool-2-thread-18"                  [_thread_blocked, id=3652, stack(0x000000810c800000,0x000000810c900000) (1024K)]
+  0x00000278eb6e6ee0 JavaThread "pool-2-thread-19"                  [_thread_blocked, id=25112, stack(0x000000810c900000,0x000000810ca00000) (1024K)]
+  0x00000278eb6e58f0 JavaThread "pool-2-thread-20"                  [_thread_blocked, id=6864, stack(0x000000810ca00000,0x000000810cb00000) (1024K)]
+Total: 41
+
+Other Threads:
+  0x00000278e80137d0 VMThread "VM Thread"                           [id=25056, stack(0x0000008109100000,0x0000008109200000) (1024K)]
+  0x00000278e7ffab30 WatcherThread "VM Periodic Task Thread"        [id=25400, stack(0x0000008109000000,0x0000008109100000) (1024K)]
+  0x00000278c5b47820 WorkerThread "GC Thread#0"                     [id=19368, stack(0x0000008108b00000,0x0000008108c00000) (1024K)]
+  0x00000278c1e59cf0 WorkerThread "GC Thread#1"                     [id=9728, stack(0x000000810a600000,0x000000810a700000) (1024K)]
+  0x00000278c1e585f0 WorkerThread "GC Thread#2"                     [id=24088, stack(0x000000810a700000,0x000000810a800000) (1024K)]
+  0x00000278c1e589a0 WorkerThread "GC Thread#3"                     [id=9632, stack(0x000000810a800000,0x000000810a900000) (1024K)]
+  0x00000278c1e58d50 WorkerThread "GC Thread#4"                     [id=4556, stack(0x000000810a900000,0x000000810aa00000) (1024K)]
+  0x00000278c205d6d0 WorkerThread "GC Thread#5"                     [id=10944, stack(0x000000810aa00000,0x000000810ab00000) (1024K)]
+  0x00000278c205da80 WorkerThread "GC Thread#6"                     [id=14396, stack(0x000000810ab00000,0x000000810ac00000) (1024K)]
+  0x00000278c205de30 WorkerThread "GC Thread#7"                     [id=25356, stack(0x000000810ac00000,0x000000810ad00000) (1024K)]
+  0x00000278c205e1e0 WorkerThread "GC Thread#8"                     [id=25148, stack(0x000000810ad00000,0x000000810ae00000) (1024K)]
+  0x00000278eb0a06f0 WorkerThread "GC Thread#9"                     [id=9740, stack(0x000000810ae00000,0x000000810af00000) (1024K)]
+  0x00000278eb0a0aa0 WorkerThread "GC Thread#10"                    [id=9796, stack(0x000000810af00000,0x000000810b000000) (1024K)]
+  0x00000278eb0a0e50 WorkerThread "GC Thread#11"                    [id=9800, stack(0x000000810b000000,0x000000810b100000) (1024K)]
+  0x00000278eb20cdf0 WorkerThread "GC Thread#12"                    [id=14492, stack(0x000000810b100000,0x000000810b200000) (1024K)]
+  0x00000278eb20e7c0 WorkerThread "GC Thread#13"                    [id=5076, stack(0x000000810b200000,0x000000810b300000) (1024K)]
+  0x00000278eb20c690 WorkerThread "GC Thread#14"                    [id=17104, stack(0x000000810b300000,0x000000810b400000) (1024K)]
+  0x00000278c5b5c650 ConcurrentGCThread "G1 Main Marker"            [id=8656, stack(0x0000008108c00000,0x0000008108d00000) (1024K)]
+  0x00000278c5b5dfb0 WorkerThread "G1 Conc#0"                       [id=19408, stack(0x0000008108d00000,0x0000008108e00000) (1024K)]
+  0x00000278eb20d1a0 WorkerThread "G1 Conc#1"                       [id=17756, stack(0x000000810b400000,0x000000810b500000) (1024K)]
+  0x00000278eb20ca40 WorkerThread "G1 Conc#2"                       [id=22736, stack(0x000000810b500000,0x000000810b600000) (1024K)]
+  0x00000278eb20eb70 WorkerThread "G1 Conc#3"                       [id=14552, stack(0x000000810b600000,0x000000810b700000) (1024K)]
+  0x00000278e7f429d0 ConcurrentGCThread "G1 Refine#0"               [id=19080, stack(0x0000008108e00000,0x0000008108f00000) (1024K)]
+  0x00000278e7f44400 ConcurrentGCThread "G1 Service"                [id=4988, stack(0x0000008108f00000,0x0000008109000000) (1024K)]
+Total: 24
+
+Threads with active compile tasks:
+Total: 0
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000603400000, size: 8140 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000027880000000-0x0000027880d40000-0x0000027880d40000), size 13893632, SharedBaseAddress: 0x0000027880000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x0000027881000000-0x00000278c1000000, reserved size: 1073741824
+UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+Narrow klass pointer bits 32, Max shift 3
+Narrow klass base: 0x0000027880000000, Narrow klass shift: 0
+Encoding Range: [0x0000027880000000 - 0x0000027980000000), (4294967296 bytes)
+Klass Range:    [0x0000027880000000 - 0x00000278c1000000), (1090519040 bytes)
+Klass ID Range:  [8 - 1090519033) (1090519025)
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+ CPUs: 20 total, 20 available
+ Memory: 32557M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (Zero based)
+ Heap Region Size: 4M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 512M
+ Heap Max Capacity: 8140M
+ Pre-touch: Disabled
+ Parallel Workers: 15
+ Concurrent Workers: 4
+ Concurrent Refinement Workers: 15
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total reserved 8335360K, committed 479232K, used 138692K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 1 survivors (4096K)
+ Metaspace       used 22451K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+|   0|0x0000000603400000, 0x0000000603800000, 0x0000000603800000|100%| O|  |TAMS 0x0000000603400000| PB 0x0000000603400000| Untracked |  0
+|   1|0x0000000603800000, 0x0000000603c00000, 0x0000000603c00000|100%| O|  |TAMS 0x0000000603800000| PB 0x0000000603800000| Untracked |  0
+|   2|0x0000000603c00000, 0x0000000604000000, 0x0000000604000000|100%| O|  |TAMS 0x0000000603c00000| PB 0x0000000603c00000| Untracked |  0
+|   3|0x0000000604000000, 0x0000000604400000, 0x0000000604400000|100%| O|  |TAMS 0x0000000604000000| PB 0x0000000604000000| Untracked |  2
+|   4|0x0000000604400000, 0x0000000604800000, 0x0000000604800000|100%| O|  |TAMS 0x0000000604400000| PB 0x0000000604400000| Untracked |  0
+|   5|0x0000000604800000, 0x0000000604c00000, 0x0000000604c00000|100%| O|  |TAMS 0x0000000604800000| PB 0x0000000604800000| Untracked |  0
+|   6|0x0000000604c00000, 0x0000000605000000, 0x0000000605000000|100%| O|  |TAMS 0x0000000604c00000| PB 0x0000000604c00000| Untracked |  4
+|   7|0x0000000605000000, 0x0000000605400000, 0x0000000605400000|100%| O|  |TAMS 0x0000000605000000| PB 0x0000000605000000| Untracked |  0
+|   8|0x0000000605400000, 0x00000006057ffff0, 0x0000000605800000| 99%| O|  |TAMS 0x0000000605400000| PB 0x0000000605400000| Untracked |  0
+|   9|0x0000000605800000, 0x0000000605b87188, 0x0000000605c00000| 88%| O|  |TAMS 0x0000000605800000| PB 0x0000000605800000| Untracked |  0
+|  10|0x0000000605c00000, 0x0000000606000000, 0x0000000606000000|100%| O|  |TAMS 0x0000000605c00000| PB 0x0000000605c00000| Untracked |  0
+|  11|0x0000000606000000, 0x0000000606400000, 0x0000000606400000|100%| O|  |TAMS 0x0000000606000000| PB 0x0000000606000000| Untracked |  0
+|  12|0x0000000606400000, 0x000000060671c9c8, 0x0000000606800000| 77%| O|  |TAMS 0x0000000606400000| PB 0x0000000606400000| Untracked |  0
+|  13|0x0000000606800000, 0x0000000606c00000, 0x0000000606c00000|100%| O|  |TAMS 0x0000000606800000| PB 0x0000000606800000| Untracked |  0
+|  14|0x0000000606c00000, 0x0000000606edc760, 0x0000000607000000| 71%| O|  |TAMS 0x0000000606c00000| PB 0x0000000606c00000| Untracked |  0
+|  15|0x0000000607000000, 0x00000006072dcdf8, 0x0000000607400000| 71%| O|  |TAMS 0x0000000607000000| PB 0x0000000607000000| Untracked |  0
+|  16|0x0000000607400000, 0x00000006077d0938, 0x0000000607800000| 95%| O|  |TAMS 0x0000000607400000| PB 0x0000000607400000| Untracked |  0
+|  17|0x0000000607800000, 0x0000000607c00000, 0x0000000607c00000|100%| O|  |TAMS 0x0000000607800000| PB 0x0000000607800000| Untracked |  0
+|  18|0x0000000607c00000, 0x0000000607fd0930, 0x0000000608000000| 95%| O|  |TAMS 0x0000000607c00000| PB 0x0000000607c00000| Untracked |  0
+|  19|0x0000000608000000, 0x00000006083d0b00, 0x0000000608400000| 95%| O|  |TAMS 0x0000000608000000| PB 0x0000000608000000| Untracked |  0
+|  20|0x0000000608400000, 0x0000000608800000, 0x0000000608800000|100%| O|  |TAMS 0x0000000608400000| PB 0x0000000608400000| Untracked |  0
+|  21|0x0000000608800000, 0x0000000608c00000, 0x0000000608c00000|100%| O|  |TAMS 0x0000000608800000| PB 0x0000000608800000| Untracked |  0
+|  22|0x0000000608c00000, 0x0000000609000000, 0x0000000609000000|100%| O|  |TAMS 0x0000000608c00000| PB 0x0000000608c00000| Untracked |  0
+|  23|0x0000000609000000, 0x0000000609400000, 0x0000000609400000|100%| O|  |TAMS 0x0000000609000000| PB 0x0000000609000000| Untracked |  0
+|  24|0x0000000609400000, 0x0000000609800000, 0x0000000609800000|100%|HS|  |TAMS 0x0000000609400000| PB 0x0000000609400000| Complete |  0
+|  25|0x0000000609800000, 0x0000000609c00000, 0x0000000609c00000|100%|HS|  |TAMS 0x0000000609800000| PB 0x0000000609800000| Complete |  0
+|  26|0x0000000609c00000, 0x000000060a000000, 0x000000060a000000|100%|HS|  |TAMS 0x0000000609c00000| PB 0x0000000609c00000| Complete |  0
+|  27|0x000000060a000000, 0x000000060a000000, 0x000000060a400000|  0%| F|  |TAMS 0x000000060a000000| PB 0x000000060a000000| Untracked |  0
+|  28|0x000000060a400000, 0x000000060a400000, 0x000000060a800000|  0%| F|  |TAMS 0x000000060a400000| PB 0x000000060a400000| Untracked |  0
+|  29|0x000000060a800000, 0x000000060a800000, 0x000000060ac00000|  0%| F|  |TAMS 0x000000060a800000| PB 0x000000060a800000| Untracked |  0
+|  30|0x000000060ac00000, 0x000000060ac00000, 0x000000060b000000|  0%| F|  |TAMS 0x000000060ac00000| PB 0x000000060ac00000| Untracked |  0
+|  31|0x000000060b000000, 0x000000060b000000, 0x000000060b400000|  0%| F|  |TAMS 0x000000060b000000| PB 0x000000060b000000| Untracked |  0
+|  32|0x000000060b400000, 0x000000060b400000, 0x000000060b800000|  0%| F|  |TAMS 0x000000060b400000| PB 0x000000060b400000| Untracked |  0
+|  33|0x000000060b800000, 0x000000060b800000, 0x000000060bc00000|  0%| F|  |TAMS 0x000000060b800000| PB 0x000000060b800000| Untracked |  0
+|  34|0x000000060bc00000, 0x000000060bc00000, 0x000000060c000000|  0%| F|  |TAMS 0x000000060bc00000| PB 0x000000060bc00000| Untracked |  0
+|  35|0x000000060c000000, 0x000000060c000000, 0x000000060c400000|  0%| F|  |TAMS 0x000000060c000000| PB 0x000000060c000000| Untracked |  0
+|  36|0x000000060c400000, 0x000000060c400000, 0x000000060c800000|  0%| F|  |TAMS 0x000000060c400000| PB 0x000000060c400000| Untracked |  0
+|  37|0x000000060c800000, 0x000000060c800000, 0x000000060cc00000|  0%| F|  |TAMS 0x000000060c800000| PB 0x000000060c800000| Untracked |  0
+|  38|0x000000060cc00000, 0x000000060cc00000, 0x000000060d000000|  0%| F|  |TAMS 0x000000060cc00000| PB 0x000000060cc00000| Untracked |  0
+|  39|0x000000060d000000, 0x000000060d000000, 0x000000060d400000|  0%| F|  |TAMS 0x000000060d000000| PB 0x000000060d000000| Untracked |  0
+|  40|0x000000060d400000, 0x000000060d400000, 0x000000060d800000|  0%| F|  |TAMS 0x000000060d400000| PB 0x000000060d400000| Untracked |  0
+|  41|0x000000060d800000, 0x000000060d800000, 0x000000060dc00000|  0%| F|  |TAMS 0x000000060d800000| PB 0x000000060d800000| Untracked |  0
+|  42|0x000000060dc00000, 0x000000060dc00000, 0x000000060e000000|  0%| F|  |TAMS 0x000000060dc00000| PB 0x000000060dc00000| Untracked |  0
+|  43|0x000000060e000000, 0x000000060e000000, 0x000000060e400000|  0%| F|  |TAMS 0x000000060e000000| PB 0x000000060e000000| Untracked |  0
+|  44|0x000000060e400000, 0x000000060e400000, 0x000000060e800000|  0%| F|  |TAMS 0x000000060e400000| PB 0x000000060e400000| Untracked |  0
+|  45|0x000000060e800000, 0x000000060e800000, 0x000000060ec00000|  0%| F|  |TAMS 0x000000060e800000| PB 0x000000060e800000| Untracked |  0
+|  46|0x000000060ec00000, 0x000000060ec00000, 0x000000060f000000|  0%| F|  |TAMS 0x000000060ec00000| PB 0x000000060ec00000| Untracked |  0
+|  47|0x000000060f000000, 0x000000060f000000, 0x000000060f400000|  0%| F|  |TAMS 0x000000060f000000| PB 0x000000060f000000| Untracked |  0
+|  48|0x000000060f400000, 0x000000060f400000, 0x000000060f800000|  0%| F|  |TAMS 0x000000060f400000| PB 0x000000060f400000| Untracked |  0
+|  49|0x000000060f800000, 0x000000060f800000, 0x000000060fc00000|  0%| F|  |TAMS 0x000000060f800000| PB 0x000000060f800000| Untracked |  0
+|  50|0x000000060fc00000, 0x000000060fc00000, 0x0000000610000000|  0%| F|  |TAMS 0x000000060fc00000| PB 0x000000060fc00000| Untracked |  0
+|  51|0x0000000610000000, 0x0000000610000000, 0x0000000610400000|  0%| F|  |TAMS 0x0000000610000000| PB 0x0000000610000000| Untracked |  0
+|  52|0x0000000610400000, 0x0000000610400000, 0x0000000610800000|  0%| F|  |TAMS 0x0000000610400000| PB 0x0000000610400000| Untracked |  0
+|  53|0x0000000610800000, 0x0000000610800000, 0x0000000610c00000|  0%| F|  |TAMS 0x0000000610800000| PB 0x0000000610800000| Untracked |  0
+|  54|0x0000000610c00000, 0x0000000610c00000, 0x0000000611000000|  0%| F|  |TAMS 0x0000000610c00000| PB 0x0000000610c00000| Untracked |  0
+|  55|0x0000000611000000, 0x0000000611000000, 0x0000000611400000|  0%| F|  |TAMS 0x0000000611000000| PB 0x0000000611000000| Untracked |  0
+|  56|0x0000000611400000, 0x0000000611400000, 0x0000000611800000|  0%| F|  |TAMS 0x0000000611400000| PB 0x0000000611400000| Untracked |  0
+|  57|0x0000000611800000, 0x0000000611800000, 0x0000000611c00000|  0%| F|  |TAMS 0x0000000611800000| PB 0x0000000611800000| Untracked |  0
+|  58|0x0000000611c00000, 0x0000000611c00000, 0x0000000612000000|  0%| F|  |TAMS 0x0000000611c00000| PB 0x0000000611c00000| Untracked |  0
+|  59|0x0000000612000000, 0x0000000612000000, 0x0000000612400000|  0%| F|  |TAMS 0x0000000612000000| PB 0x0000000612000000| Untracked |  0
+|  60|0x0000000612400000, 0x0000000612400000, 0x0000000612800000|  0%| F|  |TAMS 0x0000000612400000| PB 0x0000000612400000| Untracked |  0
+|  61|0x0000000612800000, 0x0000000612800000, 0x0000000612c00000|  0%| F|  |TAMS 0x0000000612800000| PB 0x0000000612800000| Untracked |  0
+|  62|0x0000000612c00000, 0x0000000612c00000, 0x0000000613000000|  0%| F|  |TAMS 0x0000000612c00000| PB 0x0000000612c00000| Untracked |  0
+|  63|0x0000000613000000, 0x0000000613000000, 0x0000000613400000|  0%| F|  |TAMS 0x0000000613000000| PB 0x0000000613000000| Untracked |  0
+|  64|0x0000000613400000, 0x0000000613400000, 0x0000000613800000|  0%| F|  |TAMS 0x0000000613400000| PB 0x0000000613400000| Untracked |  0
+|  65|0x0000000613800000, 0x0000000613800000, 0x0000000613c00000|  0%| F|  |TAMS 0x0000000613800000| PB 0x0000000613800000| Untracked |  0
+|  66|0x0000000613c00000, 0x0000000613c00000, 0x0000000614000000|  0%| F|  |TAMS 0x0000000613c00000| PB 0x0000000613c00000| Untracked |  0
+|  67|0x0000000614000000, 0x0000000614000000, 0x0000000614400000|  0%| F|  |TAMS 0x0000000614000000| PB 0x0000000614000000| Untracked |  0
+|  68|0x0000000614400000, 0x0000000614400000, 0x0000000614800000|  0%| F|  |TAMS 0x0000000614400000| PB 0x0000000614400000| Untracked |  0
+|  69|0x0000000614800000, 0x0000000614800000, 0x0000000614c00000|  0%| F|  |TAMS 0x0000000614800000| PB 0x0000000614800000| Untracked |  0
+|  70|0x0000000614c00000, 0x0000000614c00000, 0x0000000615000000|  0%| F|  |TAMS 0x0000000614c00000| PB 0x0000000614c00000| Untracked |  0
+|  71|0x0000000615000000, 0x0000000615000000, 0x0000000615400000|  0%| F|  |TAMS 0x0000000615000000| PB 0x0000000615000000| Untracked |  0
+|  72|0x0000000615400000, 0x0000000615400000, 0x0000000615800000|  0%| F|  |TAMS 0x0000000615400000| PB 0x0000000615400000| Untracked |  0
+|  73|0x0000000615800000, 0x0000000615800000, 0x0000000615c00000|  0%| F|  |TAMS 0x0000000615800000| PB 0x0000000615800000| Untracked |  0
+|  74|0x0000000615c00000, 0x0000000615c00000, 0x0000000616000000|  0%| F|  |TAMS 0x0000000615c00000| PB 0x0000000615c00000| Untracked |  0
+|  75|0x0000000616000000, 0x0000000616000000, 0x0000000616400000|  0%| F|  |TAMS 0x0000000616000000| PB 0x0000000616000000| Untracked |  0
+|  76|0x0000000616400000, 0x0000000616400000, 0x0000000616800000|  0%| F|  |TAMS 0x0000000616400000| PB 0x0000000616400000| Untracked |  0
+|  77|0x0000000616800000, 0x0000000616800000, 0x0000000616c00000|  0%| F|  |TAMS 0x0000000616800000| PB 0x0000000616800000| Untracked |  0
+|  78|0x0000000616c00000, 0x0000000616c00000, 0x0000000617000000|  0%| F|  |TAMS 0x0000000616c00000| PB 0x0000000616c00000| Untracked |  0
+|  79|0x0000000617000000, 0x0000000617000000, 0x0000000617400000|  0%| F|  |TAMS 0x0000000617000000| PB 0x0000000617000000| Untracked |  0
+|  80|0x0000000617400000, 0x0000000617400000, 0x0000000617800000|  0%| F|  |TAMS 0x0000000617400000| PB 0x0000000617400000| Untracked |  0
+|  81|0x0000000617800000, 0x0000000617800000, 0x0000000617c00000|  0%| F|  |TAMS 0x0000000617800000| PB 0x0000000617800000| Untracked |  0
+|  82|0x0000000617c00000, 0x0000000617c00000, 0x0000000618000000|  0%| F|  |TAMS 0x0000000617c00000| PB 0x0000000617c00000| Untracked |  0
+|  83|0x0000000618000000, 0x0000000618000000, 0x0000000618400000|  0%| F|  |TAMS 0x0000000618000000| PB 0x0000000618000000| Untracked |  0
+|  84|0x0000000618400000, 0x0000000618400000, 0x0000000618800000|  0%| F|  |TAMS 0x0000000618400000| PB 0x0000000618400000| Untracked |  0
+|  85|0x0000000618800000, 0x0000000618800000, 0x0000000618c00000|  0%| F|  |TAMS 0x0000000618800000| PB 0x0000000618800000| Untracked |  0
+|  86|0x0000000618c00000, 0x0000000618c00000, 0x0000000619000000|  0%| F|  |TAMS 0x0000000618c00000| PB 0x0000000618c00000| Untracked |  0
+|  87|0x0000000619000000, 0x0000000619000000, 0x0000000619400000|  0%| F|  |TAMS 0x0000000619000000| PB 0x0000000619000000| Untracked |  0
+|  88|0x0000000619400000, 0x0000000619400000, 0x0000000619800000|  0%| F|  |TAMS 0x0000000619400000| PB 0x0000000619400000| Untracked |  0
+|  89|0x0000000619800000, 0x0000000619800000, 0x0000000619c00000|  0%| F|  |TAMS 0x0000000619800000| PB 0x0000000619800000| Untracked |  0
+|  90|0x0000000619c00000, 0x0000000619c00000, 0x000000061a000000|  0%| F|  |TAMS 0x0000000619c00000| PB 0x0000000619c00000| Untracked |  0
+|  91|0x000000061a000000, 0x000000061a000000, 0x000000061a400000|  0%| F|  |TAMS 0x000000061a000000| PB 0x000000061a000000| Untracked |  0
+|  92|0x000000061a400000, 0x000000061a400000, 0x000000061a800000|  0%| F|  |TAMS 0x000000061a400000| PB 0x000000061a400000| Untracked |  0
+|  93|0x000000061a800000, 0x000000061a800000, 0x000000061ac00000|  0%| F|  |TAMS 0x000000061a800000| PB 0x000000061a800000| Untracked |  0
+|  94|0x000000061ac00000, 0x000000061ac00000, 0x000000061b000000|  0%| F|  |TAMS 0x000000061ac00000| PB 0x000000061ac00000| Untracked |  0
+|  95|0x000000061b000000, 0x000000061b000000, 0x000000061b400000|  0%| F|  |TAMS 0x000000061b000000| PB 0x000000061b000000| Untracked |  0
+|  96|0x000000061b400000, 0x000000061b400000, 0x000000061b800000|  0%| F|  |TAMS 0x000000061b400000| PB 0x000000061b400000| Untracked |  0
+|  97|0x000000061b800000, 0x000000061b800000, 0x000000061bc00000|  0%| F|  |TAMS 0x000000061b800000| PB 0x000000061b800000| Untracked |  0
+|  98|0x000000061bc00000, 0x000000061bc00000, 0x000000061c000000|  0%| F|  |TAMS 0x000000061bc00000| PB 0x000000061bc00000| Untracked |  0
+|  99|0x000000061c000000, 0x000000061c000000, 0x000000061c400000|  0%| F|  |TAMS 0x000000061c000000| PB 0x000000061c000000| Untracked |  0
+| 100|0x000000061c400000, 0x000000061c400000, 0x000000061c800000|  0%| F|  |TAMS 0x000000061c400000| PB 0x000000061c400000| Untracked |  0
+| 101|0x000000061c800000, 0x000000061c800000, 0x000000061cc00000|  0%| F|  |TAMS 0x000000061c800000| PB 0x000000061c800000| Untracked |  0
+| 118|0x0000000620c00000, 0x0000000620fd1b78, 0x0000000621000000| 95%| O|  |TAMS 0x0000000620c00000| PB 0x0000000620c00000| Untracked |  0
+| 119|0x0000000621000000, 0x0000000621400000, 0x0000000621400000|100%| O|  |TAMS 0x0000000621000000| PB 0x0000000621000000| Untracked |  0
+| 120|0x0000000621400000, 0x0000000621800000, 0x0000000621800000|100%| O|  |TAMS 0x0000000621400000| PB 0x0000000621400000| Untracked |  0
+| 121|0x0000000621800000, 0x0000000621c00000, 0x0000000621c00000|100%| O|  |TAMS 0x0000000621800000| PB 0x0000000621800000| Untracked |  0
+| 122|0x0000000621c00000, 0x0000000622000000, 0x0000000622000000|100%| O|  |TAMS 0x0000000621c00000| PB 0x0000000621c00000| Untracked |  0
+| 127|0x0000000623000000, 0x00000006233d0920, 0x0000000623400000| 95%| O|  |TAMS 0x0000000623000000| PB 0x0000000623000000| Untracked |  0
+|2026|0x00000007fdc00000, 0x00000007fdc00000, 0x00000007fe000000|  0%| F|  |TAMS 0x00000007fdc00000| PB 0x00000007fdc00000| Untracked |  0
+|2027|0x00000007fe000000, 0x00000007fe000000, 0x00000007fe400000|  0%| F|  |TAMS 0x00000007fe000000| PB 0x00000007fe000000| Untracked |  0
+|2028|0x00000007fe400000, 0x00000007fe800000, 0x00000007fe800000|100%| S|CS|TAMS 0x00000007fe400000| PB 0x00000007fe400000| Complete |  0
+|2029|0x00000007fe800000, 0x00000007fe800000, 0x00000007fec00000|  0%| F|  |TAMS 0x00000007fe800000| PB 0x00000007fe800000| Untracked |  0
+|2030|0x00000007fec00000, 0x00000007fec00000, 0x00000007ff000000|  0%| F|  |TAMS 0x00000007fec00000| PB 0x00000007fec00000| Untracked |  0
+|2031|0x00000007ff000000, 0x00000007ff000000, 0x00000007ff400000|  0%| F|  |TAMS 0x00000007ff000000| PB 0x00000007ff000000| Untracked |  0
+|2032|0x00000007ff400000, 0x00000007ff400000, 0x00000007ff800000|  0%| F|  |TAMS 0x00000007ff400000| PB 0x00000007ff400000| Untracked |  0
+|2033|0x00000007ff800000, 0x00000007ffc00000, 0x00000007ffc00000|100%| O|  |TAMS 0x00000007ff800000| PB 0x00000007ff800000| Untracked |  0
+|2034|0x00000007ffc00000, 0x00000007ffc17288, 0x0000000800000000|  2%| E|  |TAMS 0x00000007ffc00000| PB 0x00000007ffc00000| Complete |  0
+
+Card table byte_map: [0x00000278dee00000,0x00000278dfdf0000] _byte_map_base: 0x00000278dbde6000
+
+Marking Bits: (CMBitMap*) 0x00000278c5b47f30
+ Bits: [0x00000278dfdf0000, 0x00000278e7d20000)
+
+Polling page: 0x00000278c38b0000
+
+Metaspace:
+
+Usage:
+  Non-class:     19.84 MB used.
+      Class:      2.08 MB used.
+       Both:     21.93 MB used.
+
+Virtual space:
+  Non-class space:       64.00 MB reserved,      20.00 MB ( 31%) committed,  1 nodes.
+      Class space:        1.00 GB reserved,       2.19 MB ( <1%) committed,  1 nodes.
+             Both:        1.06 GB reserved,      22.19 MB (  2%) committed. 
+
+Chunk freelists:
+   Non-Class:  11.83 MB
+       Class:  13.83 MB
+        Both:  25.66 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 37.00 MB
+CDS: on
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+Narrow klass pointer bits 32, Max shift 3
+Narrow klass base: 0x0000027880000000, Narrow klass shift: 0
+Encoding Range: [0x0000027880000000 - 0x0000027980000000), (4294967296 bytes)
+Klass Range:    [0x0000027880000000 - 0x00000278c1000000), (1090519040 bytes)
+Klass ID Range:  [8 - 1090519033) (1090519025)
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 3.
+num_arena_births: 244.
+num_arena_deaths: 2.
+num_vsnodes_births: 2.
+num_vsnodes_deaths: 0.
+num_space_committed: 355.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 4.
+num_chunks_taken_from_freelist: 1021.
+num_chunk_merges: 3.
+num_chunk_splits: 705.
+num_chunks_enlarged: 559.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=119232Kb used=2694Kb max_used=3176Kb free=116538Kb
+ bounds [0x00000278d5ed0000, 0x00000278d61f0000, 0x00000278dd340000]
+CodeHeap 'profiled nmethods': size=119104Kb used=10336Kb max_used=12802Kb free=108767Kb
+ bounds [0x00000278ce340000, 0x00000278cefd0000, 0x00000278d5790000]
+CodeHeap 'non-nmethods': size=7424Kb used=3080Kb max_used=3208Kb free=4343Kb
+ bounds [0x00000278d5790000, 0x00000278d5ac0000, 0x00000278d5ed0000]
+CodeCache: size=245760Kb, used=16110Kb, max_used=19186Kb, free=229648Kb
+ total_blobs=6363, nmethods=5803, adapters=462, full_count=0
+Compilation: enabled, stopped_count=0, restarted_count=0
+
+Compilation events (20 events):
+Event: 2.017 Thread 0x00000278c1f19450 6744       4       java.io.FileInputStream::read (28 bytes)
+Event: 2.017 Thread 0x00000278c1f19450 nmethod 6744 0x00000278d61e5188 code [0x00000278d61e52a0, 0x00000278d61e5380]
+Event: 2.018 Thread 0x00000278c1f19450 6745       4       java.util.zip.Deflater::ensureOpen (47 bytes)
+Event: 2.018 Thread 0x00000278c1c6bbe0 6746       1       org.apache.commons.compress.archivers.zip.StreamCompressor::getBytesWrittenForLastEntry (5 bytes)
+Event: 2.018 Thread 0x00000278c1c6cb80 6747       1       org.apache.commons.compress.archivers.zip.StreamCompressor::getBytesRead (5 bytes)
+Event: 2.018 Thread 0x00000278c1c6cb80 nmethod 6747 0x00000278d61e5488 code [0x00000278d61e5580, 0x00000278d61e5648]
+Event: 2.018 Thread 0x00000278c1c6bbe0 nmethod 6746 0x00000278d61e5788 code [0x00000278d61e5880, 0x00000278d61e5948]
+Event: 2.018 Thread 0x00000278c1f19450 nmethod 6745 0x00000278d61e5a88 code [0x00000278d61e5b80, 0x00000278d61e5c40]
+Event: 2.018 Thread 0x00000278c1eebb50 6748       4       org.apache.commons.compress.archivers.zip.StreamCompressor::deflate (33 bytes)
+Event: 2.018 Thread 0x00000278c1ef5e70 6749   !   4       java.util.zip.Deflater::deflate (420 bytes)
+Event: 2.024 Thread 0x00000278c1ef5e70 nmethod 6749 0x00000278d61e5d88 code [0x00000278d61e5ec0, 0x00000278d61e63e8]
+Event: 2.025 Thread 0x00000278c1c6cb80 6750       3       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)
+Event: 2.025 Thread 0x00000278c1c6cb80 nmethod 6750 0x00000278cefc0788 code [0x00000278cefc08a0, 0x00000278cefc09d8]
+Event: 2.032 Thread 0x00000278c1eebb50 nmethod 6748 0x00000278d61e6488 code [0x00000278d61e6600, 0x00000278d61e6d50]
+Event: 2.039 Thread 0x00000278c12be8b0 6751       4       org.apache.commons.compress.archivers.zip.StreamCompressor::write (59 bytes)
+Event: 2.039 Thread 0x00000278c1ef5e70 6752   !   4       java.util.zip.Deflater::setInput (56 bytes)
+Event: 2.040 Thread 0x00000278c1ef5e70 nmethod 6752 0x00000278d61e6e08 code [0x00000278d61e6f20, 0x00000278d61e7390]
+Event: 2.042 Thread 0x00000278c22b4760 6753       4       org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated (119 bytes)
+Event: 2.049 Thread 0x00000278c22b4760 nmethod 6753 0x00000278d61e7408 code [0x00000278d61e75e0, 0x00000278d61e8900]
+Event: 2.052 Thread 0x00000278c12be8b0 nmethod 6751 0x00000278d61e8a08 code [0x00000278d61e8c00, 0x00000278d61ea148]
+
+GC Heap History (12 events):
+Event: 0.427 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 528384K, used 50292K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 12 young (49152K), 0 survivors (0K)
+ Metaspace       used 8988K, committed 9152K, reserved 1114112K
+  class space    used 790K, committed 896K, reserved 1048576K
+}
+Event: 0.429 GC heap after
+{Heap after GC invocations=1 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 528384K, used 5316K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 2 survivors (8192K)
+ Metaspace       used 8988K, committed 9152K, reserved 1114112K
+  class space    used 790K, committed 896K, reserved 1048576K
+}
+Event: 1.693 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 528384K, used 226500K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 56 young (229376K), 2 survivors (8192K)
+ Metaspace       used 19646K, committed 19968K, reserved 1114112K
+  class space    used 1786K, committed 1920K, reserved 1048576K
+}
+Event: 1.698 GC heap after
+{Heap after GC invocations=2 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 528384K, used 17950K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 5 young (20480K), 5 survivors (20480K)
+ Metaspace       used 19646K, committed 19968K, reserved 1114112K
+  class space    used 1786K, committed 1920K, reserved 1048576K
+}
+Event: 1.794 GC heap before
+{Heap before GC invocations=2 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 528384K, used 34334K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 10 young (40960K), 5 survivors (20480K)
+ Metaspace       used 21185K, committed 21504K, reserved 1114112K
+  class space    used 2014K, committed 2176K, reserved 1048576K
+}
+Event: 1.798 GC heap after
+{Heap after GC invocations=3 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 528384K, used 19703K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 5 young (20480K), 5 survivors (20480K)
+ Metaspace       used 21185K, committed 21504K, reserved 1114112K
+  class space    used 2014K, committed 2176K, reserved 1048576K
+}
+Event: 2.019 GC heap before
+{Heap before GC invocations=4 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 81920K, used 72951K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 19 young (77824K), 5 survivors (20480K)
+ Metaspace       used 22453K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+}
+Event: 2.024 GC heap after
+{Heap after GC invocations=5 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 110592K, used 53106K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 7 young (28672K), 7 survivors (28672K)
+ Metaspace       used 22453K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+}
+Event: 2.025 GC heap before
+{Heap before GC invocations=5 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 110592K, used 69490K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 11 young (45056K), 7 survivors (28672K)
+ Metaspace       used 22454K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+}
+Event: 2.031 GC heap after
+{Heap after GC invocations=6 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 110592K, used 60934K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 2 survivors (8192K)
+ Metaspace       used 22454K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+}
+Event: 2.061 GC heap before
+{Heap before GC invocations=6 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 110592K, used 81414K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 8 young (32768K), 2 survivors (8192K)
+ Metaspace       used 22454K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+}
+Event: 2.063 GC heap after
+{Heap after GC invocations=7 (full 0):
+ garbage-first heap   total reserved 8335360K, committed 131072K, used 96161K [0x0000000603400000, 0x0000000800000000)
+  region size 4096K, 1 young (4096K), 1 survivors (4096K)
+ Metaspace       used 22454K, committed 22720K, reserved 1114112K
+  class space    used 2132K, committed 2240K, reserved 1048576K
+}
+
+Dll operation events (8 events):
+Event: 0.003 Loaded shared library C:\Program Files\Java\jdk-24\bin\java.dll
+Event: 0.016 Loaded shared library C:\Program Files\Java\jdk-24\bin\jsvml.dll
+Event: 0.018 Loaded shared library C:\Program Files\Java\jdk-24\bin\net.dll
+Event: 0.019 Loaded shared library C:\Program Files\Java\jdk-24\bin\nio.dll
+Event: 0.020 Loaded shared library C:\Program Files\Java\jdk-24\bin\zip.dll
+Event: 0.068 Loaded shared library C:\Program Files\Java\jdk-24\bin\jimage.dll
+Event: 0.069 Loaded shared library C:\Program Files\NetBeans-25\netbeans\java\maven\lib\jansi-native\Windows\x86_64\jansi.dll
+Event: 0.073 Loaded shared library C:\Program Files\Java\jdk-24\bin\verify.dll
+
+Deoptimization events (20 events):
+Event: 1.872 Thread 0x00000278c5a99770 DEOPT PACKING pc=0x00000278d616780c sp=0x0000008108afdd60
+Event: 1.872 Thread 0x00000278c5a99770 DEOPT UNPACKING pc=0x00000278d58a7802 sp=0x0000008108afdd50 mode 2
+Event: 1.875 Thread 0x00000278c5a99770 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00000278d5f22858 relative=0x0000000000000278
+Event: 1.875 Thread 0x00000278c5a99770 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x00000278d5f22858 method=java.nio.Buffer.<init>(IIIILjava/lang/foreign/MemorySegment;)V @ 39 c2
+Event: 1.875 Thread 0x00000278c5a99770 DEOPT PACKING pc=0x00000278d5f22858 sp=0x0000008108afcae0
+Event: 1.875 Thread 0x00000278c5a99770 DEOPT UNPACKING pc=0x00000278d58a7802 sp=0x0000008108afca68 mode 2
+Event: 1.875 Thread 0x00000278c5a99770 Uncommon trap: trap_request=0xffffff4d fr.pc=0x00000278d618b748 relative=0x0000000000000448
+Event: 1.875 Thread 0x00000278c5a99770 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000278d618b748 method=java.util.regex.Pattern$BmpCharPropertyGreedy.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 12 c2
+Event: 1.875 Thread 0x00000278c5a99770 DEOPT PACKING pc=0x00000278d618b748 sp=0x0000008108afd3b0
+Event: 1.875 Thread 0x00000278c5a99770 DEOPT UNPACKING pc=0x00000278d58a7802 sp=0x0000008108afd348 mode 2
+Event: 1.882 Thread 0x00000278c5a99770 Uncommon trap: trap_request=0xffffffbe fr.pc=0x00000278d5fa49cc relative=0x0000000000000f2c
+Event: 1.882 Thread 0x00000278c5a99770 Uncommon trap: reason=profile_predicate action=maybe_recompile pc=0x00000278d5fa49cc method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 34 c2
+Event: 1.882 Thread 0x00000278c5a99770 DEOPT PACKING pc=0x00000278d5fa49cc sp=0x0000008108afdb70
+Event: 1.882 Thread 0x00000278c5a99770 DEOPT UNPACKING pc=0x00000278d58a7802 sp=0x0000008108afdb30 mode 2
+Event: 1.985 Thread 0x00000278f20925f0 DEOPT PACKING pc=0x00000278ce7249f3 sp=0x000000810b8ff190
+Event: 1.985 Thread 0x00000278f20925f0 DEOPT UNPACKING pc=0x00000278d57e5722 sp=0x000000810b8fe5e8 mode 3
+Event: 1.985 Thread 0x00000278f2cfa010 Uncommon trap: trap_request=0xffffff4d fr.pc=0x00000278d617f340 relative=0x0000000000000040
+Event: 1.985 Thread 0x00000278f2cfa010 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000278d617f340 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.signalNext(Ljava/util/concurrent/locks/AbstractQueuedSynchronizer$Node;)V @ 1 c2
+Event: 1.985 Thread 0x00000278f2cfa010 DEOPT PACKING pc=0x00000278d617f340 sp=0x000000810b9ff280
+Event: 1.985 Thread 0x00000278f2cfa010 DEOPT UNPACKING pc=0x00000278d58a7802 sp=0x000000810b9ff218 mode 2
+
+Classes loaded (20 events):
+Event: 1.976 Loading class java/util/concurrent/ConcurrentLinkedDeque
+Event: 1.976 Loading class java/util/concurrent/ConcurrentLinkedDeque done
+Event: 1.976 Loading class java/util/concurrent/ConcurrentLinkedDeque$Node
+Event: 1.976 Loading class java/util/concurrent/ConcurrentLinkedDeque$Node done
+Event: 1.977 Loading class java/util/Vector$1
+Event: 1.977 Loading class java/util/Vector$1 done
+Event: 1.982 Loading class java/io/DataOutputStream
+Event: 1.982 Loading class java/io/DataOutputStream done
+Event: 1.984 Loading class java/util/concurrent/ThreadPoolExecutor$Worker
+Event: 1.984 Loading class java/util/concurrent/ThreadPoolExecutor$Worker done
+Event: 1.985 Loading class java/util/concurrent/locks/AbstractQueuedSynchronizer$ExclusiveNode
+Event: 1.985 Loading class java/util/concurrent/locks/AbstractQueuedSynchronizer$ExclusiveNode done
+Event: 1.985 Loading class java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionNode
+Event: 1.985 Loading class java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionNode done
+Event: 1.992 Loading class java/util/concurrent/ConcurrentLinkedQueue$Itr
+Event: 1.992 Loading class java/util/concurrent/ConcurrentLinkedQueue$Itr done
+Event: 1.996 Loading class java/util/concurrent/ConcurrentLinkedDeque$Itr
+Event: 1.996 Loading class java/util/concurrent/ConcurrentLinkedDeque$AbstractItr
+Event: 1.997 Loading class java/util/concurrent/ConcurrentLinkedDeque$AbstractItr done
+Event: 1.997 Loading class java/util/concurrent/ConcurrentLinkedDeque$Itr done
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 0.738 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x00000006215fd510}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object, int)'> (0x00000006215fd510) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 0.738 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x0000000621605cc8}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x0000000621605cc8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 0.738 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x000000062160e028}: 'void java.lang.invoke.DelegatingMethodHandle$Holder.reinvoke_L(java.lang.Object, java.lang.Object, int)'> (0x000000062160e028) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.195 Thread 0x00000278c5a99770 Implicit null exception at 0x00000278d5f7bdeb to 0x00000278d5f7bfd0
+Event: 1.195 Thread 0x00000278c5a99770 Implicit null exception at 0x00000278d5f7b3eb to 0x00000278d5f7b5b8
+Event: 1.195 Thread 0x00000278c5a99770 Implicit null exception at 0x00000278d5fa5d9d to 0x00000278d5fa5e19
+Event: 1.242 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x000000061b194cf0}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x000000061b194cf0) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.287 Thread 0x00000278c5a99770 Implicit null exception at 0x00000278d606dadf to 0x00000278d606df58
+Event: 1.291 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x000000061ab32310}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object)'> (0x000000061ab32310) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.296 Thread 0x00000278c5a99770 Implicit null exception at 0x00000278d5fa9059 to 0x00000278d5fa96f0
+Event: 1.301 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x000000061a469af8}: 'void java.lang.invoke.Invokers$Holder.invokeExact_MT(java.lang.Object, java.lang.Object, int, java.lang.Object)'> (0x000000061a469af8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.410 Thread 0x00000278c5a99770 Implicit null exception at 0x00000278d5f0da90 to 0x00000278d5f0e044
+Event: 1.645 Thread 0x00000278ebb28e10 Exception <a 'java/lang/NoSuchMethodError'{0x0000000616373238}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, long, java.lang.Object)'> (0x0000000616373238) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.645 Thread 0x00000278ebb28e10 Exception <a 'java/lang/NoSuchMethodError'{0x000000061637b080}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, long, java.lang.Object)'> (0x000000061637b080) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.645 Thread 0x00000278ebb28e10 Exception <a 'java/lang/NoSuchMethodError'{0x000000061638a250}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, long)'> (0x000000061638a250) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.646 Thread 0x00000278ebb28e10 Exception <a 'java/lang/NoSuchMethodError'{0x0000000616393578}: 'long java.lang.invoke.DirectMethodHandle$Holder.invokeInterface(java.lang.Object, java.lang.Object)'> (0x0000000616393578) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.646 Thread 0x00000278ebb28e10 Exception <a 'java/lang/NoSuchMethodError'{0x000000061639b530}: 'long java.lang.invoke.DelegatingMethodHandle$Holder.reinvoke_L(java.lang.Object, java.lang.Object)'> (0x000000061639b530) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.878 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x0000000605f488b8}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x0000000605f488b8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.879 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x0000000605f51518}: 'java.lang.Object java.lang.invoke.Invokers$Holder.linkToTargetMethod(java.lang.Object, java.lang.Object, int, java.lang.Object)'> (0x0000000605f51518) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+Event: 1.880 Thread 0x00000278c5a99770 Exception <a 'java/lang/NoSuchMethodError'{0x0000000605f70aa0}: 'long java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object)'> (0x0000000605f70aa0) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 805]
+
+VM Operations (20 events):
+Event: 1.785 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 1.785 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 1.794 Executing VM operation: CollectForMetadataAllocation (Metadata GC Threshold)
+Event: 1.798 Executing VM operation: CollectForMetadataAllocation (Metadata GC Threshold) done
+Event: 1.801 Executing VM operation: G1PauseRemark
+Event: 1.803 Executing VM operation: G1PauseRemark done
+Event: 1.803 Executing VM operation: G1PauseCleanup
+Event: 1.803 Executing VM operation: G1PauseCleanup done
+Event: 1.978 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 1.978 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 1.994 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 1.994 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 1.994 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 1.994 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 2.019 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause)
+Event: 2.024 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause) done
+Event: 2.025 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause)
+Event: 2.031 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause) done
+Event: 2.061 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause)
+Event: 2.063 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause) done
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (20 events):
+Event: 1.984 Thread 0x00000278c5a99770 Thread added: 0x00000278f0429910
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f20925f0
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f2cfa010
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f78cb0
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f77e10
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f76f70
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f75980
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f78560
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f760d0
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f76820
+Event: 1.985 Thread 0x00000278c5a99770 Thread added: 0x00000278f1f776c0
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e7630
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e4300
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e6040
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e7d80
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e51a0
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e6790
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e4a50
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e6ee0
+Event: 1.986 Thread 0x00000278c5a99770 Thread added: 0x00000278eb6e58f0
+
+
+Dynamic libraries:
+0x00007ff740dd0000 - 0x00007ff740de0000 	C:\Program Files\Java\jdk-24\bin\java.exe
+0x00007ffc77e60000 - 0x00007ffc780c8000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffc76760000 - 0x00007ffc76829000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffc754e0000 - 0x00007ffc758cd000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffc758d0000 - 0x00007ffc75a1b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffc19a70000 - 0x00007ffc19a8b000 	C:\Program Files\Java\jdk-24\bin\VCRUNTIME140.dll
+0x00007ffc4b610000 - 0x00007ffc4b626000 	C:\Program Files\Java\jdk-24\bin\jli.dll
+0x00007ffc77c40000 - 0x00007ffc77e0c000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffc754b0000 - 0x00007ffc754d7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffc5f0e0000 - 0x00007ffc5f37a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4484_none_3e0e6d4ce32ef3b3\COMCTL32.dll
+0x00007ffc768f0000 - 0x00007ffc7691b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffc779e0000 - 0x00007ffc77a89000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffc751f0000 - 0x00007ffc75327000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffc75b50000 - 0x00007ffc75bf3000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffc768b0000 - 0x00007ffc768df000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffc6e380000 - 0x00007ffc6e38c000 	C:\Program Files\Java\jdk-24\bin\vcruntime140_1.dll
+0x00007ffb95e00000 - 0x00007ffb95e8e000 	C:\Program Files\Java\jdk-24\bin\msvcp140.dll
+0x00007ffb960f0000 - 0x00007ffb96e91000 	C:\Program Files\Java\jdk-24\bin\server\jvm.dll
+0x00007ffc76610000 - 0x00007ffc766c4000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffc761d0000 - 0x00007ffc76276000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffc75c00000 - 0x00007ffc75d18000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffc77bb0000 - 0x00007ffc77c24000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffc68680000 - 0x00007ffc686b5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffc6dc40000 - 0x00007ffc6dc4b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffc73bd0000 - 0x00007ffc73c2e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffc73bb0000 - 0x00007ffc73bc4000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffc73e70000 - 0x00007ffc73e8b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffc261c0000 - 0x00007ffc261ca000 	C:\Program Files\Java\jdk-24\bin\jimage.dll
+0x00007ffc65f20000 - 0x00007ffc66161000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffc76280000 - 0x00007ffc76606000 	C:\WINDOWS\System32\combase.dll
+0x00007ffc76920000 - 0x00007ffc76a00000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffc59d80000 - 0x00007ffc59dc3000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffc75a20000 - 0x00007ffc75ab9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffc10b50000 - 0x00007ffc10b6e000 	C:\Program Files\Java\jdk-24\bin\java.dll
+0x00007ffc75d20000 - 0x00007ffc75ebe000 	C:\WINDOWS\System32\ole32.dll
+0x00007ffc76a20000 - 0x00007ffc7716a000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffc75330000 - 0x00007ffc754a4000 	C:\WINDOWS\System32\wintypes.dll
+0x00007ffc72c50000 - 0x00007ffc734ab000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007ffc75fb0000 - 0x00007ffc760a5000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007ffc77b40000 - 0x00007ffc77baa000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffc74ec0000 - 0x00007ffc74eef000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffb96010000 - 0x00007ffb960e7000 	C:\Program Files\Java\jdk-24\bin\jsvml.dll
+0x00007ffc26160000 - 0x00007ffc26170000 	C:\Program Files\Java\jdk-24\bin\net.dll
+0x00007ffc74400000 - 0x00007ffc7446a000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ffbf1f90000 - 0x00007ffbf1fa6000 	C:\Program Files\Java\jdk-24\bin\nio.dll
+0x00007ffbf1f70000 - 0x00007ffbf1f87000 	C:\Program Files\Java\jdk-24\bin\zip.dll
+0x00007ffc4b5e0000 - 0x00007ffc4b604000 	C:\Program Files\NetBeans-25\netbeans\java\maven\lib\jansi-native\Windows\x86_64\jansi.dll
+0x00007ffc108f0000 - 0x00007ffc10900000 	C:\Program Files\Java\jdk-24\bin\verify.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-24\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4484_none_3e0e6d4ce32ef3b3;C:\Program Files\Java\jdk-24\bin\server;C:\Program Files\NetBeans-25\netbeans\java\maven\lib\jansi-native\Windows\x86_64
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=C:\Program Files\NetBeans-25\netbeans\java\maven\bin\m2.conf -Dmaven.home=C:\Program Files\NetBeans-25\netbeans\java\maven -Dlibrary.jansi.path=C:\Program Files\NetBeans-25\netbeans\java\maven\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\Admin\Desktop\LTHD\phattrienweb\Phat-Trien-He-Thong-Web\ThesisApp 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-25\netbeans\java\maven-nblib\netbeans-eventspy.jar --no-transfer-progress install
+java_class_path (initial): C:\Program Files\NetBeans-25\netbeans\java\maven\boot\plexus-classworlds-2.8.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 4                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 15                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 8535408640                                {product} {ergonomic}
+   size_t MaxNewSize                               = 5121245184                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602176                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122093568                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 121962496                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 8535408640                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-24
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Admin\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python311\;C:\Users\Admin\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python313\;C:\Users\Admin\AppData\Local\Programs\Python\Launcher\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Admin\AppData\Roaming\npm
+USERNAME=Admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+TMP=C:\Users\Admin\AppData\Local\Temp
+TEMP=C:\Users\Admin\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.4484)
+OS uptime: 0 days 0:03 hours
+
+CPU: total 20 (initial active 20) (10 cores per cpu, 2 threads per core) family 6 model 183 stepping 1 microcode 0x12b, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, serialize, rdtscp, rdpid, fsrm, gfni, f16c, pku, cet_ibt, cet_ss
+Processor Information for the first 20 processors :
+  Max Mhz: 3500, Current Mhz: 3500, Mhz Limit: 3500
+
+Memory: 4k page, system-wide physical 32557M (21088M free)
+TotalPageFile size 35757M (AvailPageFile size 22081M)
+current process WorkingSet (physical memory assigned to process): 314M, peak: 368M
+current process commit charge ("private bytes"): 696M, peak: 713M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.0.2+12-54) for windows-amd64 JRE (24.0.2+12-54), built on 2025-07-08T12:10:27Z with MS VC++ 17.6 (VS2022)
+
+END.
